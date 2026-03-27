@@ -1,0 +1,2924 @@
+{
+  "INDIA": [
+    {
+      "id": "ind_t1_p1",
+      "title": "Track 1 \u2014 The GSO Stalker: First Contact",
+      "text": "ISRO SSA Network at Pune flags an anomaly: PAKSAT-1R has quietly exited its ITU-assigned slot at 38E and is executing a series of low-delta-V burns. Current range to GSAT-7A (Indian Navy primary fleet comms satellite): 80km. Relative velocity: near-zero, indicating a co-orbital shadow maneuver.",
+      "notes": "GSO slots are assigned by the ITU under RR Article 44. Unauthorized slot deviation is a Treaty violation. However, 'stalking' (shadowing at safe range) is a legal grey area. The Chinese Shijian-21 satellite demonstrated this in 2022 when it towed a dead satellite to graveyard orbit. GSAT-7A handles Indian Navy VSAT, maritime patrol aircraft datalinks, and Andaman chain comms \u2014 losing it creates a strategic blindspot in the Indian Ocean.",
+      "geofence": {
+        "lat": 0,
+        "lng": 83.0,
+        "radius": 5.0
+      },
+      "options": [
+        {
+          "label": "Lodge UN-COPUOS Protest",
+          "next": "ind_t1_p2a",
+          "score": 10,
+          "risk": 1,
+          "requireFuel": 0,
+          "log": "Formal protest lodged. The clock is ticking."
+        },
+        {
+          "label": "Proactive Maneuver \u2014 Offset GSAT-7A",
+          "next": "ind_t1_p2b",
+          "score": 20,
+          "risk": 5,
+          "requireFuel": 20,
+          "log": "GSAT-7A relocated to safe-haven orbital slot."
+        },
+        {
+          "label": "Broadcast Warning on ITU Emergency Frequency",
+          "next": "ind_t1_p2c",
+          "score": 15,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "Public warning broadcast; international monitoring activated."
+        },
+        {
+          "label": "Kinetic Intercept (ASAT)",
+          "next": "ind_debris_1",
+          "score": 50,
+          "risk": 95,
+          "requireFuel": 30,
+          "trigger": "debris",
+          "log": "Target destroyed. 5,000 fragments in GEO corridor."
+        }
+      ]
+    },
+    {
+      "id": "ind_t1_p2a",
+      "title": "Track 1 \u2014 Diplomatic Path: Ignored",
+      "text": "48 hours later: the protest was filed, acknowledged, and quietly buried. OPFOR has now closed to 10km, matching GSAT-7A velocity precisely. Thermal imaging reveals a mechanical arm deployment \u2014 a 'Sticky Finger' mechanism capable of physically grappling a satellite.",
+      "notes": "Proximity RPO at under 10km is increasingly common. Russia's Cosmos-2542 performed this on a US spy satellite in 2020. The robotic arm is dual-use: legally a refueling/repair mechanism; militarily it can grab, spin, or tow an asset into an uncontrolled trajectory. India has no legal recourse \u2014 no treaty prohibits proximity inspection unless contact occurs.",
+      "geofence": {
+        "lat": 0,
+        "lng": 83.5,
+        "radius": 2.0
+      },
+      "options": [
+        {
+          "label": "Active Dazzle \u2014 Flash OPFOR Optics",
+          "next": "ind_t1_p3a",
+          "score": 35,
+          "risk": 15,
+          "requireFuel": 5,
+          "log": "OPFOR optics temporarily saturated. Arm retracted."
+        },
+        {
+          "label": "Electronic Shielding + Uplink Hardening",
+          "next": "ind_t1_p3b",
+          "score": 25,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "GSAT-7A uplink hardened; spoofing attempts blocked."
+        },
+        {
+          "label": "Alert US Space Command + Request Shared Watch",
+          "next": "ind_t1_p3c",
+          "score": 20,
+          "risk": 1,
+          "requireFuel": 0,
+          "log": "US Space Command tracking OPFOR; SIGINT shared."
+        }
+      ]
+    },
+    {
+      "id": "ind_t1_p2b",
+      "title": "Track 1 \u2014 Tactical Path: OPFOR Matches Burn",
+      "text": "Your relocation burn moved GSAT-7A 150km eastward. Within 6 hours, OPFOR matched the burn exactly, closing to 40km. They have deployed a sub-satellite \u2014 a 3U CubeSat inspector \u2014 into a trailing orbit behind GSAT-7A blind spot, using optical and RF sensors to map your satellite bus architecture.",
+      "notes": "Co-orbital inspection via sub-satellite was pioneered by Russia's Olymp (Luch) satellite family. The inspector CubeSat orbits in the 'cone of silence' \u2014 directly behind the host satellite where its antenna patterns have blind coverage. Mapping a satellite bus architecture allows an adversary to identify solar panel hinge points, attitude thrusters, and antenna ports \u2014 precisely the data needed to design a targeted jamming or grappling attack.",
+      "geofence": {
+        "lat": 0,
+        "lng": 84.0,
+        "radius": 2.0
+      },
+      "options": [
+        {
+          "label": "Release Counter-Inspector CubeSat",
+          "next": "ind_t1_p3a",
+          "score": 40,
+          "risk": 25,
+          "requireFuel": 15,
+          "log": "RPO standoff initiated. OPFOR inspector neutralized."
+        },
+        {
+          "label": "Narrow-Beam LOS Comms Only",
+          "next": "ind_t1_p3b",
+          "score": 30,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Signal footprint reduced to line-of-sight beams only."
+        },
+        {
+          "label": "Execute Fast Drift \u2014 Change Inclination +0.5 degrees",
+          "next": "ind_t1_p3c",
+          "score": 35,
+          "risk": 10,
+          "requireFuel": 30,
+          "log": "Inclination change shakes trailing inspector."
+        }
+      ]
+    },
+    {
+      "id": "ind_t1_p2c",
+      "title": "Track 1 \u2014 Warning Path: OPFOR Escalates",
+      "text": "The warning broadcast trended on social media. OPFOR issued a counter-statement claiming their satellite is performing 'routine orbital maintenance' and accused India of 'militarizing civilian space assets.' Their satellite is now 20km away and accelerating.",
+      "notes": "Information operations in the space domain are as important as the physical maneuvers. Russia's TASS and China's Xinhua maintain dedicated space correspondents to quickly frame military space activities as civilian or defensive. India's lack of a dedicated space public affairs bureau means OPFOR narratives consistently dominate first-cycle media reporting.",
+      "geofence": {
+        "lat": 0,
+        "lng": 83.2,
+        "radius": 3.0
+      },
+      "options": [
+        {
+          "label": "Release SSA Data Publicly \u2014 Counter Narrative",
+          "next": "ind_t1_p3a",
+          "score": 25,
+          "risk": 1,
+          "requireFuel": 0,
+          "log": "Raw tracking data declassified; international support grows."
+        },
+        {
+          "label": "Emergency GEO Relocation",
+          "next": "ind_t1_p3b",
+          "score": 30,
+          "risk": 8,
+          "requireFuel": 35,
+          "log": "GSAT-7A moved out of OPFOR operational envelope."
+        }
+      ]
+    },
+    {
+      "id": "ind_t1_p3a",
+      "title": "Track 1 \u2014 Standoff: The Dual-Use Dilemma",
+      "text": "OPFOR has deployed a second arm attempting to latch onto GSAT-7A solar panel frame. Your counter-inspector is 30 meters away. One burn could ram it into the OPFOR asset \u2014 but a collision at GEO altitude (35,786km) creates debris that will NOT naturally decay for centuries.",
+      "notes": "GEO debris is permanent. Unlike LEO debris that re-enters within years, a collision at GEO creates fragments remaining in the 35,786km belt essentially forever. The entire GEO arc \u2014 humanity's prime real estate for communications, weather, and navigation \u2014 could be rendered unusable. The 1972 Liability Convention holds the launching state responsible for all damage caused by its space objects.",
+      "geofence": {
+        "lat": 0,
+        "lng": 84.5,
+        "radius": 1.5
+      },
+      "options": [
+        {
+          "label": "Ram Counter-Inspector into OPFOR Arm (Kinetic)",
+          "next": "ind_geo_debris",
+          "score": 60,
+          "risk": 90,
+          "requireFuel": 5,
+          "trigger": "debris",
+          "log": "OPFOR arm destroyed; GEO debris event triggered."
+        },
+        {
+          "label": "EMP Pulse from Counter-Inspector (Non-Kinetic)",
+          "next": "ind_t2_p1",
+          "score": 50,
+          "risk": 35,
+          "requireFuel": 10,
+          "log": "OPFOR electronics reset; arm retracted. India maintains high ground."
+        },
+        {
+          "label": "Stand Down \u2014 Accept Inspection Under Protest",
+          "next": "ind_t2_p1",
+          "score": 15,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Political cost accepted; asset integrity preserved."
+        }
+      ]
+    },
+    {
+      "id": "ind_t1_p3b",
+      "title": "Track 1 \u2014 Electronic Hardening: Uplink Under Fire",
+      "text": "With GSAT-7A uplink hardened, OPFOR shifts tactics. They broadcast spurious telecommand packets on GSAT-7A public TT&C frequency. While your hardening blocks most attempts, three packets slip through \u2014 your Attitude Control System makes small unauthorized thruster burns, slowly pushing you out of your station-keeping box.",
+      "notes": "TT&C frequencies are published in the ITU Master International Frequency Register \u2014 technically public. Attackers exploit this by crafting valid-format but unauthorized commands. The GSAT-7 series uses S-band TT&C (2025-2110 MHz), shared with many legacy systems and harder to encrypt without a full bus redesign.",
+      "geofence": {
+        "lat": 0,
+        "lng": 84.0,
+        "radius": 2.0
+      },
+      "options": [
+        {
+          "label": "Transition to Quantum-Key Encrypted Uplink",
+          "next": "ind_t2_p1",
+          "score": 55,
+          "risk": 3,
+          "requireFuel": 0,
+          "log": "QKD uplink active; all spurious packets cryptographically rejected."
+        },
+        {
+          "label": "Physical Switch to Backup Encrypted Transponder",
+          "next": "ind_t2_p1",
+          "score": 40,
+          "risk": 5,
+          "requireFuel": 5,
+          "log": "Backup transponder online; unauthorized commands blocked."
+        }
+      ]
+    },
+    {
+      "id": "ind_t1_p3c",
+      "title": "Track 1 \u2014 US Coalition: Three-Satellite Pincer",
+      "text": "US Space Command shares full sensor coverage revealing: two additional OPFOR satellites are simultaneously repositioning toward India's RISAT-2BR1 and CARTOSAT-3. This is a coordinated three-satellite pincer \u2014 a planned blinding of India's entire military ISR constellation.",
+      "notes": "India's ISR constellation is small but highly capable. RISAT-2BR1 uses an Israeli-designed X-band SAR that can see through clouds. CARTOSAT-3 has 0.25m resolution. Simultaneously blinding both would leave India's armed forces with zero real-time satellite imagery during a potential surface crisis \u2014 the textbook 'Space Pearl Harbor' scenario war-gamers have warned about since 2015.",
+      "geofence": {
+        "lat": 0,
+        "lng": 80.0,
+        "radius": 10.0
+      },
+      "options": [
+        {
+          "label": "Emergency Repositioning of All Three Assets",
+          "next": "ind_t2_p1",
+          "score": 45,
+          "risk": 15,
+          "requireFuel": 60,
+          "log": "Full ISR constellation dispersed. OPFOR three-pronged attack defeated."
+        },
+        {
+          "label": "Activate Ground-Based UAV ISR Redundancy",
+          "next": "ind_t2_p1",
+          "score": 30,
+          "risk": 10,
+          "requireFuel": 0,
+          "log": "UAV-based ISR activated as stopgap. Space assets in passive mode."
+        }
+      ]
+    },
+    {
+      "id": "ind_geo_debris",
+      "title": "CRISIS: GEO Debris Belt Created",
+      "text": "The collision at 35,786km altitude created approximately 800 fragments larger than 10cm. GEO debris does not decay \u2014 these fragments orbit for centuries, creating a minefield in the most commercially critical orbital band. 14 commercial satellite operators have filed emergency avoidance notices. ITU has convened an emergency session.",
+      "notes": "A GEO debris event is categorically different from LEO debris. No treaty prohibits kinetic action in orbit. An India-created GEO debris field would result in diplomatic isolation, ITU sanctions, and potential loss of India's future orbital slot allocations. The 2022 US unilateral ban on destructive ASAT testing was a first step but non-binding.",
+      "geofence": {
+        "lat": 0,
+        "lng": 84.5,
+        "radius": 3.0
+      },
+      "options": [
+        {
+          "label": "Accept Full International Liability + Fund Remediation",
+          "next": "ind_t2_p1",
+          "score": -30,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "India accepts $4.2B liability claim. Diplomatic standing severely damaged."
+        },
+        {
+          "label": "Deploy Electrodynamic Tether to Shepherd Fragments",
+          "next": "ind_t2_p1",
+          "score": 20,
+          "risk": 30,
+          "requireFuel": 20,
+          "log": "Experimental debris remediation activated. Partial success."
+        },
+        {
+          "label": "Deny Responsibility \u2014 Blame OPFOR Engineering Fault",
+          "next": "ind_t2_p1",
+          "score": 5,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "Deniability attempted. International observers unconvinced."
+        }
+      ]
+    },
+    {
+      "id": "ind_debris_1",
+      "title": "CRITICAL: LEO Debris \u2014 Kessler in Progress",
+      "text": "The ASAT strike produced 5,200 trackable fragments (>10cm) and an estimated 50,000 fragments >1cm. Twelve of India's operational LEO satellites are in the primary debris corridor. Impact probability per orbit: 8%.",
+      "notes": "The 2007 Chinese ASAT test on Fengyun-1C at 865km altitude is the single most consequential debris-generating event in history, responsible for approximately 3,000 tracked fragments still in orbit 17 years later. The Kessler Syndrome (1978) describes a cascade where collision debris creates more collisions. India's own space program would be the primary victim of any Indian ASAT strike at LEO inclinations where its own constellation resides.",
+      "geofence": {
+        "lat": 20.0,
+        "lng": 70.0,
+        "radius": 15.0
+      },
+      "options": [
+        {
+          "label": "Emergency Deorbit of Lowest-Priority Satellite",
+          "next": "ind_t2_p1",
+          "score": -10,
+          "risk": 5,
+          "requireFuel": 40,
+          "log": "One asset sacrificed to clear corridor. Others survive."
+        },
+        {
+          "label": "Attempt Magnetic Shield + Orbit Raise",
+          "next": "ind_t2_p1",
+          "score": 25,
+          "risk": 40,
+          "requireFuel": 50,
+          "log": "Experimental maneuver partially successful."
+        },
+        {
+          "label": "Emergency ISR Handoff to US/EU Partners",
+          "next": "ind_t2_p1",
+          "score": 15,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "Partner assets provide bridge coverage. Strategic capability degraded 60%."
+        }
+      ]
+    },
+    {
+      "id": "ind_t2_p1",
+      "title": "Track 2 \u2014 Ground Segment Breach: MCF Penetration",
+      "text": "The Bengaluru Master Control Facility reports a Level 3 physical security breach. CCTV shows two individuals in contractor uniforms entering the primary server room during a 03:15 shift change, exploiting a 4-minute gap in biometric logging when the backup generator activated. They had 9 minutes of unsupervised access to the command terminal rack.",
+      "notes": "The MCF at Hassan (Karnataka) controls India's entire GEO fleet. Physical access to a command terminal allows insertion of a hardware implant \u2014 a device smaller than a USB drive that can send pre-programmed telecommands on a timer, even after the intruders leave. The 2008 Landsat-7 and Terra satellite incident showed that mission network compromise is the fastest path to orbital asset control.",
+      "geofence": {
+        "lat": 13.0,
+        "lng": 77.5,
+        "radius": 3.0
+      },
+      "options": [
+        {
+          "label": "Immediate Lockdown \u2014 All Uplinks Suspended",
+          "next": "ind_t2_p2",
+          "score": 15,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "All uplinks paused. Fleet in autonomous safe-mode."
+        },
+        {
+          "label": "Trace Implant \u2014 Deploy Hardware Forensics Team",
+          "next": "ind_t2_p2b",
+          "score": 30,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "Implant found in Rack C-7. Attribution confirmed: proxy cell linked to OPFOR signals intelligence."
+        },
+        {
+          "label": "Controlled Bleed \u2014 Feed False Telemetry to Implant",
+          "next": "ind_t2_p2c",
+          "score": 45,
+          "risk": 25,
+          "requireFuel": 0,
+          "log": "Double-agent operation activated. OPFOR receives false orbital data."
+        }
+      ]
+    },
+    {
+      "id": "ind_t2_p2",
+      "title": "Track 2 \u2014 Ransomware: Fleet Goes Dark",
+      "text": "The hardware implant activated 2 minutes before discovery. A dormant ransomware payload \u2014 'VORTEX-7,' a known state-sponsored tool \u2014 has encrypted mission databases of three GSAT and one RISAT satellite. Their telemetry streams show all-zeros. The spacecraft are flying blind.",
+      "notes": "Satellite ransomware is not science fiction. In 2019, ESA confirmed it had thwarted a cyberattack on ground segment networks. 'Bricking' a satellite by overwriting its EEPROM is irreversible without a hardware-level backup frequency. ISRO's newer satellites carry a hard-wired backup transponder on a classified frequency that can accept a full software reset. Older assets do not have this feature.",
+      "geofence": {
+        "lat": 13.2,
+        "lng": 77.6,
+        "radius": 1.0
+      },
+      "options": [
+        {
+          "label": "Broadcast Hard-Reset via Classified Backup Frequency",
+          "next": "ind_t3_p1",
+          "score": 40,
+          "risk": 25,
+          "requireFuel": 0,
+          "log": "Fleet rebooted via backup command channel. 3 of 4 satellites recovered."
+        },
+        {
+          "label": "Isolate Infected Nodes \u2014 Triage Unaffected Assets",
+          "next": "ind_t3_p1",
+          "score": 25,
+          "risk": 10,
+          "requireFuel": 0,
+          "log": "Partial telemetry restored. Infected satellites in safe-hold."
+        },
+        {
+          "label": "Negotiate Decryption Key via Proxy",
+          "next": "ind_t3_p1",
+          "score": 5,
+          "risk": 15,
+          "requireFuel": 0,
+          "log": "Key received. One satellite recovered. Political cost: severe."
+        }
+      ]
+    },
+    {
+      "id": "ind_t2_p2b",
+      "title": "Track 2 \u2014 Forensics: Three-Hop Attribution Chain",
+      "text": "The hardware implant is a custom FPGA device with a GSM modem \u2014 it receives trigger commands via commercial cellular network, invisible to space-link monitoring. Forensic analysis of the SIM card reveals calls routed through a Pakistan-based number, then a UAE relay, to an IP address in Belarus. Three hops deep and legally deniable.",
+      "notes": "False-flag attribution is the hallmark of modern state-sponsored cyber operations. The SolarWinds attack (2020) used 14 layers of obfuscation; operators were not officially attributed for 10 months. In the space domain, attribution is even harder because satellite TT&C attacks leave no forensic artifacts on the satellite itself \u2014 only on ground segment hardware.",
+      "geofence": {
+        "lat": 13.0,
+        "lng": 77.5,
+        "radius": 2.0
+      },
+      "options": [
+        {
+          "label": "Share Attribution Data with Five Eyes Partners",
+          "next": "ind_t3_p1",
+          "score": 35,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "Intelligence shared. Coalition condemnation issued. Sanctions proposed."
+        },
+        {
+          "label": "Offensive Cyber \u2014 Mirror Attack on OPFOR Ground Segment",
+          "next": "ind_t3_p1",
+          "score": 50,
+          "risk": 40,
+          "requireFuel": 0,
+          "log": "OPFOR satellite control center hit. Their comms degraded 40%."
+        },
+        {
+          "label": "Publicize Implant Details + Technical Evidence",
+          "next": "ind_t3_p1",
+          "score": 25,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Global media covers attack. OPFOR diplomatically isolated."
+        }
+      ]
+    },
+    {
+      "id": "ind_t2_p2c",
+      "title": "Track 2 \u2014 Counterintel: Feeding the Mole",
+      "text": "For 72 hours, India feeds deliberately incorrect orbital elements to the OPFOR implant. OPFOR's space operations center plans three intercept maneuvers based on false data \u2014 sending their inspector satellites to empty orbits. Their fuel reserves are now critically low.",
+      "notes": "Deception operations in the space domain are rare but historically decisive. During the Cold War, the US leaked false specifications of KH-9 reconnaissance satellites to mislead Soviet ASAT targeting. An enemy with incorrect ephemeris data wastes limited delta-V (fuel) on pointless maneuvers \u2014 a bloodless, deniable form of space denial.",
+      "geofence": {
+        "lat": 13.0,
+        "lng": 77.5,
+        "radius": 2.0
+      },
+      "options": [
+        {
+          "label": "Extend Deception \u2014 Feed Increasingly Erratic Data",
+          "next": "ind_t3_p1",
+          "score": 55,
+          "risk": 15,
+          "requireFuel": 0,
+          "log": "OPFOR inspector satellites now fuel-critical and repositioned to useless orbits."
+        },
+        {
+          "label": "Terminate Deception + Expose Implant Publicly",
+          "next": "ind_t3_p1",
+          "score": 30,
+          "risk": 3,
+          "requireFuel": 0,
+          "log": "Diplomatic win secured; deception advantages exhausted."
+        }
+      ]
+    },
+    {
+      "id": "ind_t3_p1",
+      "title": "Track 3 \u2014 Lunar South Pole: Heritage Site Standoff",
+      "text": "Chandrayaan-4 surface rover detects a foreign wheeled vehicle approaching the Vikram lander heritage site at 220 meters/hour. The foreign rover has a robotic excavation arm. Under the Artemis Accords (which India signed), designated heritage zones require safety distances \u2014 but the OPFOR nation has NOT signed the Accords.",
+      "notes": "The Artemis Accords (2020+) are bilateral \u2014 nations must individually sign. As of 2024, 43 nations have signed, but China and Russia have not. The 1967 Outer Space Treaty prohibits national appropriation of celestial bodies but says nothing about surface access restrictions. The Vikram lander site at 70.9S, 22.8E is adjacent to the highest concentration of water-ice detected by Chandrayaan-1.",
+      "geofence": {
+        "lat": -85.0,
+        "lng": 23.0,
+        "radius": 0.5
+      },
+      "options": [
+        {
+          "label": "Declare 2km Safety Zone \u2014 Artemis Accords Basis",
+          "next": "ind_t3_p2",
+          "score": 15,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "Zone declared. Non-signatory refuses to acknowledge. International legal battle begins."
+        },
+        {
+          "label": "Deploy High-Power Laser Warning Flash",
+          "next": "ind_t3_p2",
+          "score": 30,
+          "risk": 40,
+          "requireFuel": 10,
+          "log": "Foreign rover camera optics temporarily saturated. Forward movement halted."
+        },
+        {
+          "label": "Dispatch Chandrayaan Rover to Block Path",
+          "next": "ind_t3_p2b",
+          "score": 25,
+          "risk": 55,
+          "requireFuel": 20,
+          "log": "Your rover positioned between OPFOR and heritage site. Standoff at 12 meters."
+        },
+        {
+          "label": "Re-task Orbiter to Image Rover in 4K \u2014 Evidence Gathering",
+          "next": "ind_t3_p2c",
+          "score": 20,
+          "risk": 2,
+          "requireFuel": 5,
+          "log": "Full HD imagery of OPFOR rover transmitted to UN and international media."
+        }
+      ]
+    },
+    {
+      "id": "ind_t3_p2",
+      "title": "Track 3 \u2014 Lunar Resource Claim: Ice Extraction Begins",
+      "text": "The foreign rover has reached the safety zone edge and is drilling. Ground analysis indicates it is core-sampling the ice-rich regolith stratum identified in your Chandrayaan-1 data \u2014 data publicly shared in 2009. The rover has extracted approximately 3kg of water-ice, constituting 'resource extraction' under the Outer Space Treaty.",
+      "notes": "Water-ice on the Moon is strategic: electrolysis produces hydrogen and oxygen, which are rocket propellants. A nation that controls South Pole ice deposits effectively controls a 'gas station' for cislunar operations. NASA estimates economically recoverable water-ice could sustain a lunar economy for decades.",
+      "geofence": {
+        "lat": -85.0,
+        "lng": 23.0,
+        "radius": 0.5
+      },
+      "options": [
+        {
+          "label": "File Emergency Action with ICJ + Demand Restitution",
+          "next": "ind_t4_p1",
+          "score": 20,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Legal proceedings begin. OPFOR ignores. Sample already extracted."
+        },
+        {
+          "label": "Disable OPFOR Rover via Targeted EMP from Orbiter",
+          "next": "ind_t4_p1",
+          "score": 45,
+          "risk": 60,
+          "requireFuel": 15,
+          "log": "OPFOR rover disabled. International condemnation follows. Resource protected."
+        },
+        {
+          "label": "Accelerate Indian Extraction \u2014 Claim Same Deposit",
+          "next": "ind_t4_p1",
+          "score": 35,
+          "risk": 25,
+          "requireFuel": 25,
+          "log": "India extracts 12kg of ice from same deposit. Legal standoff now bilateral."
+        }
+      ]
+    },
+    {
+      "id": "ind_t3_p2b",
+      "title": "Track 3 \u2014 Rover Face-Off at 12 Meters",
+      "text": "Your Chandrayaan rover is physically interposed between the OPFOR machine. OPFOR machine is 340kg \u2014 three times your rover mass. It begins a slow push using its excavation arm as a ram. Your rover wheels are spinning in the regolith. 90 seconds before displacement.",
+      "notes": "Physical rover conflict on the lunar surface is unprecedented but the physics are straightforward. In 1/6th Earth gravity, mass still determines push force. Permanently shadowed regions have cryogenically compacted ice-regolith mix that provides better traction than loose upper regolith.",
+      "geofence": {
+        "lat": -85.0,
+        "lng": 23.0,
+        "radius": 0.1
+      },
+      "options": [
+        {
+          "label": "Sacrifice Rover \u2014 Ram OPFOR Drill Mechanism",
+          "next": "ind_t4_p1",
+          "score": 50,
+          "risk": 35,
+          "requireFuel": 0,
+          "log": "Chandrayaan rover destroyed. OPFOR drill arm damaged. Extraction halted. India loses rover."
+        },
+        {
+          "label": "Retreat + Broadcast Live Video of OPFOR Aggression",
+          "next": "ind_t4_p1",
+          "score": 25,
+          "risk": 5,
+          "requireFuel": 5,
+          "log": "Worldwide condemnation of OPFOR footage. Diplomatic tide turns."
+        }
+      ]
+    },
+    {
+      "id": "ind_t3_p2c",
+      "title": "Track 3 \u2014 Information Victory: 4K Evidence",
+      "text": "The orbital imagery is stunning \u2014 0.5m resolution showing the OPFOR rover national flag, vehicle markings, and drilling in the Indian-designated zone. The footage has gone globally viral within 3 hours. Three UNSC members have called for an emergency session. However, OPFOR ally has announced veto readiness.",
+      "notes": "Remote sensing data from space has been used as legal evidence since the 1986 Rainbow Warrior case. Commercial satellite operators (Maxar, Planet Labs) already provide evidence-as-a-service for conflict zones. India releasing military-grade imagery of a cislunar incident would set a precedent for transparent space governance.",
+      "geofence": {
+        "lat": -85.0,
+        "lng": 23.0,
+        "radius": 0.5
+      },
+      "options": [
+        {
+          "label": "Share Imagery with All UN Members \u2014 Bypass Veto",
+          "next": "ind_t4_p1",
+          "score": 35,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "General Assembly resolution passed 141-7. Powerful precedent set."
+        },
+        {
+          "label": "Negotiate Bilateral Resource-Sharing Agreement",
+          "next": "ind_t4_p1",
+          "score": 40,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "India and OPFOR negotiate 50/50 extraction rights. De facto partnership begins."
+        }
+      ]
+    },
+    {
+      "id": "ind_t4_p1",
+      "title": "Track 4 \u2014 Lunar Far Side: The Ghost Signal",
+      "text": "Your Chandrayaan-4 relay satellite at Earth-Moon L2 begins receiving burst transmissions at 437.525 MHz. The bursts are 0.3 seconds long, repeat every 47 minutes, and triangulate to a sub-surface origin near Von Karman crater \u2014 where China's Chang'e-4 landed in 2019 and is supposedly uninhabited.",
+      "notes": "The Lunar Far Side is permanently shielded from Earth-based radio monitoring \u2014 making it the only truly radio-quiet location within the Earth-Moon system. A clandestine communication relay here would be invisible to all Earth-based monitoring, discoverable only by a relay satellite at L2. The Von Karman crater is 186km in diameter and 13km deep \u2014 ample space for a sub-surface facility.",
+      "geofence": {
+        "lat": -44.0,
+        "lng": 176.0,
+        "radius": 2.0
+      },
+      "options": [
+        {
+          "label": "Triangulate Source \u2014 Covert Mapping Pass",
+          "next": "ind_t4_p2",
+          "score": 30,
+          "risk": 10,
+          "requireFuel": 10,
+          "log": "Source mapped to 4.7m resolution. Sub-surface cavern confirmed."
+        },
+        {
+          "label": "Decode Transmissions \u2014 Deploy AI Signal Intelligence",
+          "next": "ind_t4_p2b",
+          "score": 40,
+          "risk": 15,
+          "requireFuel": 5,
+          "log": "Burst decoded: military traffic structured as command/control packets."
+        },
+        {
+          "label": "Jam the Frequency \u2014 Deny Sub-Surface Comms",
+          "next": "ind_t4_p2c",
+          "score": 35,
+          "risk": 50,
+          "requireFuel": 15,
+          "log": "Sub-surface base communications jammed. Response unknown."
+        },
+        {
+          "label": "Report to COSPAR and ITU \u2014 Formal Investigation Request",
+          "next": "ind_t4_p2",
+          "score": 15,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "International investigation requested. OPFOR stonewalls inspectors."
+        }
+      ]
+    },
+    {
+      "id": "ind_t4_p2",
+      "title": "Track 4 \u2014 Far Side: The Lava Tube Network",
+      "text": "High-resolution GRAIL gravity data reveals the facility is in a network of lava tubes extending 340km, opening near the lunar limb. The facility has been constructed over 4 years using autonomous robotic mining. It appears to contain: a nuclear reactor, a phased array antenna farm, and launch pads for sub-orbital vehicles.",
+      "notes": "Lunar lava tubes have roofs sometimes 100m thick \u2014 providing natural radiation shielding equivalent to 10 meters of water, solving the main human survival challenge on the Moon. JAXA's SELENE orbiter confirmed a 50m-wide, 50km-long lava tube entrance near the Marius Hills in 2017. A nuclear reactor on the Moon is not prohibited by the 1967 OST \u2014 only nuclear weapons are banned.",
+      "geofence": {
+        "lat": -44.0,
+        "lng": 176.0,
+        "radius": 3.0
+      },
+      "options": [
+        {
+          "label": "Dispatch Autonomous Scout Probe to Lava Tube Entrance",
+          "next": "ind_t5_p1",
+          "score": 45,
+          "risk": 30,
+          "requireFuel": 25,
+          "log": "Probe deployed. Facility entrance confirmed at lunar coordinates 6.2N, 138.4E."
+        },
+        {
+          "label": "Relay Full Intelligence to UNOOSA + Five Eyes",
+          "next": "ind_t5_p1",
+          "score": 30,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "International community shocked. OPFOR demands India cease provocation."
+        },
+        {
+          "label": "Targeted Laser Strike \u2014 Disable Reactor Cooling Array",
+          "next": "ind_t5_p1",
+          "score": 55,
+          "risk": 70,
+          "requireFuel": 20,
+          "log": "Reactor cooling array damaged. Facility power output drops 60%."
+        }
+      ]
+    },
+    {
+      "id": "ind_t4_p2b",
+      "title": "Track 4 \u2014 Signals Intelligence: Kyber-1024",
+      "text": "Your AI signals intelligence suite determines: the burst transmissions use Kyber-1024, a quantum-resistant encryption algorithm not publicly released until 2023. This means the facility was updated within the last 18 months. The traffic includes time-stamped coordinate packages \u2014 consistent with targeting data for cislunar intercept vehicles.",
+      "notes": "Kyber-1024 is a lattice-based cryptographic algorithm selected by NIST in 2022 as a post-quantum encryption standard. Its presence indicates a nation-state with advanced cryptographic capabilities and recent software access. The coordinate data structure matches the format used by cruise missile guidance packages. Running a weapons coordination loop from the lunar far side would make it virtually immune to electronic warfare from Earth.",
+      "geofence": {
+        "lat": -44.0,
+        "lng": 176.0,
+        "radius": 2.0
+      },
+      "options": [
+        {
+          "label": "Insert Cryptographic Trojan into OPFOR Uplink Stream",
+          "next": "ind_t5_p1",
+          "score": 55,
+          "risk": 35,
+          "requireFuel": 0,
+          "log": "Trojan accepted. India now receives copies of all targeting data."
+        },
+        {
+          "label": "Alert UN Secretary-General via Emergency Channel",
+          "next": "ind_t5_p1",
+          "score": 20,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "UNSC convened. P5 member blocks resolution."
+        }
+      ]
+    },
+    {
+      "id": "ind_t4_p2c",
+      "title": "Track 4 \u2014 Jamming Response: Backup Laser Link",
+      "text": "Your 437 MHz jamming silenced the burst transmissions. But 11 hours later, a laser communication terminal on the crater rim points at a previously untracked satellite in a retrograde orbit, re-transmitting via Ka-band to an undisclosed Earth station. You have jammed yourself into revealing their backup communication architecture.",
+      "notes": "Frequency-agile adversaries plan for jamming from the start. A layered communication architecture (RF primary, laser secondary) is considered best practice for any hardened military installation. The retrograde orbit relay is particularly clever \u2014 retrograde orbits are rare enough that most SSA sensors are tuned to prograde traffic. The laser link is essentially unjammable without physical access to the terminal line-of-sight.",
+      "geofence": {
+        "lat": -44.0,
+        "lng": 176.0,
+        "radius": 2.0
+      },
+      "options": [
+        {
+          "label": "Deploy Relay Satellite into Retrograde Orbit \u2014 Shadow OPFOR Relay",
+          "next": "ind_t5_p1",
+          "score": 40,
+          "risk": 25,
+          "requireFuel": 35,
+          "log": "Shadow relay deployed. OPFOR laser link intercepted."
+        },
+        {
+          "label": "Track Laser Beam \u2014 Reverse-Engineer Earth Station Location",
+          "next": "ind_t5_p1",
+          "score": 35,
+          "risk": 5,
+          "requireFuel": 5,
+          "log": "Earth station identified: remote facility in uninhabited desert region."
+        }
+      ]
+    },
+    {
+      "id": "ind_t5_p1",
+      "title": "Track 5 \u2014 NavIC Under Attack: Regional GPS Warfare",
+      "text": "DGCA reports catastrophic NavIC/GPS errors over a 1,200km corridor spanning Ladakh, Nepal, and the Bay of Bengal. Errors range from 200m to 12km. Three Indian Airlines flights have declared navigation emergencies. Satellite imagery shows unusual dust patterns near the Line of Actual Control \u2014 consistent with large vehicle columns moving under cover of navigation denial.",
+      "notes": "GPS/NavIC spoofing in conflict zones has been documented in 12 active conflict theaters since 2016, including Syria, Libya, Ukraine, and the South China Sea. The key difference from jamming: spoofing provides false-but-believable coordinates. Aviation autopilots trust GNSS implicitly. India's NavIC system uses L5 military encrypted signals \u2014 but civilian aviation uses the unencrypted L1 signal.",
+      "geofence": {
+        "lat": 32.0,
+        "lng": 78.0,
+        "radius": 8.0
+      },
+      "options": [
+        {
+          "label": "Switch Military Assets to Rubidium Atomic Clock Sync",
+          "next": "ind_t5_p2",
+          "score": 40,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Military navigation restored on encrypted signal."
+        },
+        {
+          "label": "Issue NOTAM \u2014 Ground All Affected Civil Flights",
+          "next": "ind_t5_p2",
+          "score": 25,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "Civil aviation grounded. Economic cost: Rs 2,400cr/day. Tactically correct."
+        },
+        {
+          "label": "Triangulate Spoofing Sources + Deploy EW Strike",
+          "next": "ind_t5_p2b",
+          "score": 35,
+          "risk": 55,
+          "requireFuel": 10,
+          "log": "Spoofing arrays on border ridgelines neutralized. 4 towers destroyed."
+        },
+        {
+          "label": "Activate Backup INS for Military Units",
+          "next": "ind_t5_p2",
+          "score": 30,
+          "risk": 10,
+          "requireFuel": 0,
+          "log": "Inertial Navigation System activated. Ground forces unaffected by spoofing."
+        }
+      ]
+    },
+    {
+      "id": "ind_t5_p2",
+      "title": "Track 5 \u2014 The Dark Satellite: Retrograde Interceptor",
+      "text": "Byalalu DSN station detects a new object not in yesterday's catalogue. Retrograde orbit at 650km altitude, approaching the IRNSS/NavIC constellation at relative velocity 14.8 km/s. The object is 80cm x 40cm x 60cm, consistent with an ASAT interceptor body.",
+      "notes": "Retrograde orbital insertion costs roughly twice the fuel of a prograde launch. The US, China, and Russia are the only nations confirmed to have conducted retrograde satellite launches. The interceptor configuration matches the size class of China's SC-19 and Russia's Nudol ASAT kill vehicles. At 14.8 km/s relative velocity, even a 1kg mass delivers kinetic energy equivalent to 50kg of TNT.",
+      "geofence": {
+        "lat": 28.0,
+        "lng": 77.0,
+        "radius": 8.0
+      },
+      "options": [
+        {
+          "label": "Emergency Constellation Maneuver \u2014 Scatter IRNSS Fleet",
+          "next": "ind_t6_p1",
+          "score": 25,
+          "risk": 5,
+          "requireFuel": 60,
+          "log": "NavIC constellation dispersed. ASAT passes through empty space."
+        },
+        {
+          "label": "Engage with Ground-Based Directed Energy Weapon",
+          "next": "ind_t6_p1",
+          "score": 45,
+          "risk": 40,
+          "requireFuel": 0,
+          "log": "Thermal kill vehicle disabled. Proximity detonation: 400m miss distance."
+        },
+        {
+          "label": "Deploy Chaff Cloud \u2014 Radar Decoys",
+          "next": "ind_t6_p1",
+          "score": 35,
+          "risk": 20,
+          "requireFuel": 15,
+          "log": "Interceptor confused by chaff. Detonates 2.3km off-target."
+        },
+        {
+          "label": "Kinetic ASAT Intercept \u2014 Hit the Interceptor",
+          "next": "ind_debris_1",
+          "score": 50,
+          "risk": 80,
+          "requireFuel": 25,
+          "trigger": "debris",
+          "log": "Interceptor destroyed. Significant debris at 650km LEO created."
+        }
+      ]
+    },
+    {
+      "id": "ind_t5_p2b",
+      "title": "Track 5 \u2014 EW Strike Aftermath: Cross-Border Escalation",
+      "text": "Destruction of four spoofing towers on the OPFOR side of the LAC has triggered a diplomatic crisis. OPFOR declared it an 'act of war against sovereign infrastructure.' Their ISR satellites are now conducting intensive imaging of Indian forward positions. The escalation ladder has moved up three rungs.",
+      "notes": "Electronic warfare attacks against ground infrastructure occupy a critical escalation threshold. Unlike jamming (reversible), physically destroying ground infrastructure constitutes a kinetic attack under the laws of armed conflict. India's position depends on whether it can prove the towers were used for military spoofing, versus OPFOR's claim they were civilian telecommunications infrastructure.",
+      "geofence": {
+        "lat": 34.0,
+        "lng": 78.0,
+        "radius": 5.0
+      },
+      "options": [
+        {
+          "label": "Release Technical Evidence of Spoofing to International Community",
+          "next": "ind_t6_p1",
+          "score": 30,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Signal recordings prove towers were military. International opinion shifts."
+        },
+        {
+          "label": "Acknowledge Action + Propose Immediate De-escalation",
+          "next": "ind_t6_p1",
+          "score": 20,
+          "risk": 3,
+          "requireFuel": 0,
+          "log": "Back-channel diplomacy begins. Ceasefire on navigation warfare proposed."
+        },
+        {
+          "label": "Reinforce Forward Positions While OPFOR is Diplomatically Occupied",
+          "next": "ind_t6_p1",
+          "score": 40,
+          "risk": 45,
+          "requireFuel": 0,
+          "log": "Ground forces advance 12km. Space-enabled ISR guides the operation."
+        }
+      ]
+    },
+    {
+      "id": "ind_t6_p1",
+      "title": "Track 6 \u2014 Solar Storm: X-Class Flare Warning",
+      "text": "NOAA's Space Weather Prediction Center issues an Extreme (X9.8) solar flare warning. Expected CME arrival: 18 hours. At this intensity, unprotected GEO satellites face 40% probability of permanent single-event latchup; LEO satellites in the South Atlantic Anomaly face 70% chance of processor corruption. India's entire fleet of 55 operational satellites is at risk.",
+      "notes": "The 1989 Quebec solar storm caused a 9-hour blackout across Canada by inducing currents in power lines. For satellites, the primary risks are: (1) Single-Event Upset \u2014 a cosmic ray flips a bit in memory; (2) Single-Event Latchup \u2014 a semiconductor permanently short-circuits; (3) Differential charging causing electrostatic discharge. The most cost-effective mitigation is safe mode \u2014 edge-on to the sun, non-critical systems off.",
+      "geofence": {
+        "lat": 0,
+        "lng": 0,
+        "radius": 2000
+      },
+      "options": [
+        {
+          "label": "Orient All Satellites Edge-On to Sun (Safe Mode)",
+          "next": "ind_t7_p1",
+          "score": 30,
+          "risk": 5,
+          "requireFuel": 10,
+          "log": "Fleet survives with 3% permanent hardware loss. Strategic ops paused 18 hours."
+        },
+        {
+          "label": "Emergency Power-Down of Non-Critical Systems",
+          "next": "ind_t7_p1",
+          "score": 20,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "All satellites survive. 24-hour operational pause."
+        },
+        {
+          "label": "Maintain Operations \u2014 Accept Risk on Military Priority Satellites",
+          "next": "ind_t7_p1",
+          "score": 40,
+          "risk": 50,
+          "requireFuel": 0,
+          "log": "Three satellites permanently damaged. Military ISR maintained through storm."
+        },
+        {
+          "label": "Use Storm Window to Covertly Reposition Fleet (OPFOR SSA Blinded)",
+          "next": "ind_t7_p1",
+          "score": 55,
+          "risk": 30,
+          "requireFuel": 40,
+          "log": "Solar storm EMI blinds OPFOR tracking radars. Fleet repositioned undetected."
+        }
+      ]
+    },
+    {
+      "id": "ind_t7_p1",
+      "title": "Track 7 \u2014 Byalalu DSN: Command Ghosting",
+      "text": "The Deep Space Network station at Byalalu detects 'Command Ghosting': unauthorized telecommand packets injected into the Mars Orbiter Mission uplink beam, accepted by MOM's legacy transponder. Ghost commands are directing MOM thrusters to fire in short bursts \u2014 slowly exhausting its remaining fuel budget.",
+      "notes": "Command Ghosting requires: (1) precise knowledge of the spacecraft uplink frequency and modulation (available in ISRO technical papers); (2) physical proximity to the uplink beam path; (3) knowledge of the command format. MOM uses an S-band uplink at 7.19 GHz. Its authentication was designed for the 2013 threat environment. Modern software-defined radio costing under $5,000 could replicate MOM command format from ISRO published documents.",
+      "geofence": {
+        "lat": 12.8,
+        "lng": 77.3,
+        "radius": 2.0
+      },
+      "options": [
+        {
+          "label": "Purge Command Buffer + Re-authenticate Entire Session",
+          "next": "ind_t7_p2",
+          "score": 30,
+          "risk": 10,
+          "requireFuel": 0,
+          "log": "Ghost commands deleted. Enhanced authentication activated."
+        },
+        {
+          "label": "Physical Uplink Disconnect \u2014 Autonomous Mode",
+          "next": "ind_t7_p2",
+          "score": 15,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "MOM enters autonomous survival mode. 72-hour comms blackout."
+        },
+        {
+          "label": "Feed False Telemetry \u2014 Let Ghost Think It Succeeded",
+          "next": "ind_t7_p2b",
+          "score": 45,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "MOM simulates thruster response. Attacker believes they have fuel control. Trap set."
+        },
+        {
+          "label": "Trace Injection Beam \u2014 Geolocation of OPFOR Antenna",
+          "next": "ind_t7_p2c",
+          "score": 40,
+          "risk": 15,
+          "requireFuel": 0,
+          "log": "Antenna located: rooftop installation in neutral-country city."
+        }
+      ]
+    },
+    {
+      "id": "ind_t7_p2",
+      "title": "Track 7 \u2014 DSN: Multi-Vector Ground Assault",
+      "text": "While containing the Byalalu attack, two additional DSN assets come under coordinated attack: Port Blair ISTRAC receives a 4.7 Tbps DDoS attack; simultaneously, a drone swarm of 12 commercial quadrotors modified with RF jammers approaches the Lucknow ground station antenna farm.",
+      "notes": "Ground segment attacks are 1,000 times cheaper than developing ASAT weapons but can achieve similar effects. Port Blair ISTRAC is critical for LEO satellite passes over the eastern Indian Ocean \u2014 its loss creates a 6-hour daily coverage gap for Indian naval ISR. The drone swarm uses off-the-shelf quadrotors with aftermarket RF modules \u2014 total cost under $50,000.",
+      "geofence": {
+        "lat": 11.7,
+        "lng": 92.7,
+        "radius": 3.0
+      },
+      "options": [
+        {
+          "label": "Activate Backup Satellite-Direct Relay (Skip Ground Station)",
+          "next": "ind_t8_p1",
+          "score": 35,
+          "risk": 15,
+          "requireFuel": 0,
+          "log": "Satellite-to-satellite relay activated. Ground segment bypassed."
+        },
+        {
+          "label": "Deploy Anti-Drone EW Systems at Lucknow Perimeter",
+          "next": "ind_t8_p1",
+          "score": 40,
+          "risk": 10,
+          "requireFuel": 0,
+          "log": "Drone swarm neutralized. 11 of 12 drones forced down."
+        },
+        {
+          "label": "Emergency Routing via Commercial SatCom (Intelsat)",
+          "next": "ind_t8_p1",
+          "score": 20,
+          "risk": 25,
+          "requireFuel": 0,
+          "log": "Commercial routing established. Security compromised. Operations continue."
+        }
+      ]
+    },
+    {
+      "id": "ind_t7_p2b",
+      "title": "Track 7 \u2014 Ghost Trap: Reverse the Hunt",
+      "text": "The deception is working. MOM fake telemetry convinced the ghost attacker they have fuel authority. They issued a 'deorbit burn' command sequence. India executes a pre-planned 'diagnostic burn' moving MOM to a higher orbit instead. Confused, the attacker increases injection power \u2014 making their signal much easier to direction-find.",
+      "notes": "Direction-finding (DF) of a hostile uplink injection requires multiple receiving stations working in synchrony \u2014 Time Difference of Arrival (TDOA). ISRO has three stations with DF capability (Byalalu, Lucknow, Port Blair) forming a triangle across the subcontinent. TDOA from three stations can locate an RF source to within 500m accuracy. The ghost attacker's increased power is operationally fatal \u2014 they revealed themselves for the sake of an already-doomed operation.",
+      "geofence": {
+        "lat": 12.8,
+        "lng": 77.3,
+        "radius": 2.0
+      },
+      "options": [
+        {
+          "label": "DF Lock \u2014 Share Location with National Security Agencies",
+          "next": "ind_t8_p1",
+          "score": 55,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Attacker location confirmed. NSA and RAW notified. Physical arrest operation planned."
+        },
+        {
+          "label": "Maintain Deception \u2014 Harvest Full Attack Methodology",
+          "next": "ind_t8_p1",
+          "score": 40,
+          "risk": 15,
+          "requireFuel": 0,
+          "log": "Full command injection methodology documented. Vulnerability patched globally."
+        }
+      ]
+    },
+    {
+      "id": "ind_t7_p2c",
+      "title": "Track 7 \u2014 Attribution: The Neutral Country Problem",
+      "text": "The command injection antenna is on the 14th floor of a commercial building in Kathmandu \u2014 a neutral country with an open border treaty with India. The antenna is registered to a telecom company majority-owned by an OPFOR state enterprise through three shell companies. Confronting Nepal risks a diplomatic crisis; ignoring it allows the attack to continue.",
+      "notes": "Using neutral-country territory for military space operations is a well-established grey zone tactic. During the Cold War, Soviet intelligence used satellite-receiving facilities in neutral Finland to intercept Western communications. A 7.19 GHz high-gain antenna needed to inject commands into ISRO uplink would require a 2.4m dish \u2014 easily concealed on a commercial rooftop with the right building permits.",
+      "geofence": {
+        "lat": 27.7,
+        "lng": 85.3,
+        "radius": 2.0
+      },
+      "options": [
+        {
+          "label": "Share Evidence with Nepal Government \u2014 Request Shutdown",
+          "next": "ind_t8_p1",
+          "score": 30,
+          "risk": 10,
+          "requireFuel": 0,
+          "log": "Nepal shuts down installation. OPFOR loses injection capability. Diplomatic friction: moderate."
+        },
+        {
+          "label": "Unilateral Electronic Countermeasure \u2014 Burn the Uplink",
+          "next": "ind_t8_p1",
+          "score": 45,
+          "risk": 40,
+          "requireFuel": 0,
+          "log": "High-power counter-signal disables OPFOR antenna. Nepal protests frequency interference."
+        },
+        {
+          "label": "Covert Physical Operation \u2014 Disable Antenna",
+          "next": "ind_t8_p1",
+          "score": 55,
+          "risk": 60,
+          "requireFuel": 0,
+          "log": "Antenna physically disabled by covert team. Plausible deniability maintained."
+        }
+      ]
+    },
+    {
+      "id": "ind_t8_p1",
+      "title": "Track 8 \u2014 Orbital Manufacturing: Firmware Sabotage",
+      "text": "India's micro-gravity manufacturing platform in LEO reports a thermal anomaly in its main furnace chamber \u2014 340C above setpoint in 90 seconds. Remote diagnostics reveal the firmware controlling thermal management has been replaced with a modified version using a stolen ISRO developer certificate to bypass digital signature checks.",
+      "notes": "Micro-gravity manufacturing produces materials impossible to create on Earth due to convective currents. Ultra-pure ZBLAN fluoride fiber optic cables produced in space have 100x lower attenuation than terrestrial fiber \u2014 each meter is worth $5,000-50,000. The stolen developer certificate indicates the attack was prepared months or years in advance, with access to ISRO software signing infrastructure.",
+      "geofence": {
+        "lat": 0,
+        "lng": 45.0,
+        "radius": 10.0
+      },
+      "options": [
+        {
+          "label": "Deploy AI Threat Hunter \u2014 Autonomous Firmware Rollback",
+          "next": "ind_t9_p1",
+          "score": 40,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "Malicious firmware identified and rolled back. Manufacturing resumed in 6 hours."
+        },
+        {
+          "label": "Emergency Thermal Dump \u2014 Vent Furnace to Space",
+          "next": "ind_t9_p1",
+          "score": 25,
+          "risk": 10,
+          "requireFuel": 5,
+          "log": "Furnace vented. 3-week production loss. Platform structurally safe."
+        },
+        {
+          "label": "Isolate Platform Network \u2014 Operate in Manual Mode",
+          "next": "ind_t9_p1",
+          "score": 20,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Platform operates manually. Productivity drops 70% but is hack-proof."
+        },
+        {
+          "label": "Revoke All Stolen Certificates + Force Re-authentication Across Fleet",
+          "next": "ind_t9_p1",
+          "score": 35,
+          "risk": 15,
+          "requireFuel": 0,
+          "log": "Certificate revocation complete. OPFOR loses all developer-level access to ISRO networks."
+        }
+      ]
+    },
+    {
+      "id": "ind_t9_p1",
+      "title": "Track 9 \u2014 Z-Point Standoff: 50 Meters",
+      "text": "An OPFOR inspector satellite has shadowed your GSAT-30 relay for 51 hours and is now within 50 meters. At this range, both spacecraft are within each other's thruster plume zones. The OPFOR craft has begun transmitting on GSAT-30 S-band uplink frequency, causing interference with the primary military link to Western Naval Command.",
+      "notes": "At 50-meter separation in GEO orbit, the two spacecraft are in each other's proximity interference zones: (1) the OPFOR craft cold-gas thrusters contaminate your solar panels with propellant residue; (2) its antennas radiate power directly onto your solar cells. The OPFOR craft is maintaining exactly 50m separation via extremely precise station-keeping, demonstrating highly sophisticated orbital mechanics.",
+      "geofence": {
+        "lat": 5.0,
+        "lng": 60.0,
+        "radius": 5.0
+      },
+      "options": [
+        {
+          "label": "Static Discharge Pulse \u2014 EMP via Deployed Tether",
+          "next": "ind_t10_p1",
+          "score": 40,
+          "risk": 50,
+          "requireFuel": 10,
+          "log": "OPFOR electronics temporarily disabled. Inspector drifts to 400m separation."
+        },
+        {
+          "label": "Release Xenon Gas Cloud \u2014 Obscure Sensors",
+          "next": "ind_t10_p1",
+          "score": 35,
+          "risk": 30,
+          "requireFuel": 15,
+          "log": "OPFOR optical and IR sensors obscured. 4-hour operational window created."
+        },
+        {
+          "label": "Rapid Orbit Change \u2014 500m Radial Maneuver",
+          "next": "ind_t10_p1",
+          "score": 30,
+          "risk": 15,
+          "requireFuel": 25,
+          "log": "GSAT-30 moves to new slot. OPFOR requires 3.2 hours to match."
+        },
+        {
+          "label": "Broadcast OPFOR Interference Attempts on ITU Channels",
+          "next": "ind_t10_p1",
+          "score": 20,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "International monitoring confirms OPFOR interference. Formal citation issued."
+        }
+      ]
+    },
+    {
+      "id": "ind_t10_p1",
+      "title": "Track 10 \u2014 Asteroid M-Class: Cislunar Race",
+      "text": "Asteroid 2025 JX7 \u2014 an M-type body approximately 85 meters diameter \u2014 has been captured into a temporary cislunar orbit. Spectroscopic analysis indicates platinum-group metals at approximately $4.7 trillion market equivalent. An OPFOR mining tug is matching the asteroid velocity and preparing to deploy anchoring harpoons. Your cislunar prospector vehicle is 22 hours away.",
+      "notes": "M-type asteroids are metallic \u2014 primarily iron-nickel with platinum-group element concentrations 10-1,000x higher than Earth's richest mines. Under the 2015 US Commercial Space Launch Competitiveness Act and equivalent Indian legislation, extracted resources belong to the extracting entity \u2014 but the celestial body itself cannot be owned. This legal framework was designed to encourage asteroid mining while respecting the OST.",
+      "geofence": {
+        "lat": 0,
+        "lng": 0,
+        "radius": 500
+      },
+      "options": [
+        {
+          "label": "Sprint Burn \u2014 Arrive in 14 Hours (Exhaust Reserve Fuel)",
+          "next": "ind_t10_p2",
+          "score": 40,
+          "risk": 30,
+          "requireFuel": 70,
+          "log": "Prospector arrives before OPFOR completes harpoon deployment."
+        },
+        {
+          "label": "Deploy Kinetic Harpoon from Long Range",
+          "next": "ind_t10_p2",
+          "score": 50,
+          "risk": 55,
+          "requireFuel": 30,
+          "log": "Harpoon anchors asteroid. India claim physically established."
+        },
+        {
+          "label": "Declare Scientific Preserve \u2014 Petition UN COPUOS",
+          "next": "ind_t10_p2",
+          "score": 15,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Legal claim filed. OPFOR continues docking operations during proceedings."
+        },
+        {
+          "label": "Negotiate Joint Extraction Agreement (50/50)",
+          "next": "ind_t10_p2",
+          "score": 30,
+          "risk": 5,
+          "requireFuel": 5,
+          "log": "Framework agreement reached. Historic joint space resource treaty signed."
+        }
+      ]
+    },
+    {
+      "id": "ind_t10_p2",
+      "title": "Track 10 \u2014 Asteroid: The Tug-of-War",
+      "text": "Both your prospector and OPFOR mining tug are now anchored to opposite faces of 2025 JX7. Both are attempting to redirect the asteroid trajectory. The asteroid is a loose rubble pile (porosity approximately 50%) \u2014 two competing tugs have destabilized its rotation and it is now tumbling at 2 rotations per hour.",
+      "notes": "Rubble-pile asteroids (the majority of near-Earth asteroids in this size class) have no structural integrity \u2014 held together by gravity and weak inter-particle cohesion. Simultaneous anchor by two independent harpoon systems creates competing structural loads. A full uncontrolled tumble could disintegrate the asteroid \u2014 destroying all vehicles attached to it.",
+      "geofence": {
+        "lat": 0,
+        "lng": 0,
+        "radius": 500
+      },
+      "options": [
+        {
+          "label": "Cease Burn \u2014 Propose Joint L4 Insertion",
+          "next": "ind_t11_p1",
+          "score": 35,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "OPFOR agrees. Joint operation inserts asteroid at L4. Historic cooperation."
+        },
+        {
+          "label": "Increase Thrust \u2014 Win the Tug-of-War",
+          "next": "ind_t11_p1",
+          "score": 45,
+          "risk": 40,
+          "requireFuel": 50,
+          "log": "India wins. Asteroid on L4 trajectory. OPFOR tug detaches at fuel limit."
+        },
+        {
+          "label": "Detach Own Tug \u2014 Alert Planetary Defense Authority",
+          "next": "ind_t11_p1",
+          "score": 20,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "International alarm raised. OPFOR ordered to cease. Asteroid trajectory stabilized."
+        }
+      ]
+    },
+    {
+      "id": "ind_t11_p1",
+      "title": "Track 11 \u2014 Orbital Hotel: Civilian Hostage Crisis",
+      "text": "A commercial orbital station hosting 23 paying guests including 4 Indian nationals experiences catastrophic attitude control failure after a suspected cyberattack on its propulsion computer. The station is tumbling at 0.7 revolutions per minute. Rescue timeline: 14 hours minimum. OPFOR has offered a 'rescue mission' that would give them access to the station's data systems.",
+      "notes": "Orbital stations are covered by the 1968 Rescue Agreement, which mandates all spacefaring nations assist in rescue operations. The tumble rate of 0.7 rpm will cause nausea and disorientation in about 40 minutes. The presence of OPFOR nationals on the station creates a legal obligation for the attacking party to rescue its own citizens \u2014 a politically awkward situation if OPFOR is the attacker.",
+      "geofence": {
+        "lat": 51.6,
+        "lng": 0.0,
+        "radius": 20.0
+      },
+      "options": [
+        {
+          "label": "Authorize OPFOR Rescue \u2014 Accept Verification Conditions",
+          "next": "ind_t11_p2",
+          "score": 25,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "OPFOR Soyuz docks. Hostages rescued. Intel compromise: unknown."
+        },
+        {
+          "label": "Sprint Indian Crew Vehicle (Gaganyaan) \u2014 11-Hour Window",
+          "next": "ind_t11_p2",
+          "score": 40,
+          "risk": 35,
+          "requireFuel": 50,
+          "log": "Gaganyaan crew arrives in 11 hours. All 23 rescued. India is hero of the hour."
+        },
+        {
+          "label": "Remotely Stabilize Station Via Attitude Control Hack",
+          "next": "ind_t11_p2",
+          "score": 45,
+          "risk": 25,
+          "requireFuel": 0,
+          "log": "India space cyber team remotely stabilizes tumble. Crisis averted without physical rescue."
+        }
+      ]
+    },
+    {
+      "id": "ind_t11_p2",
+      "title": "Track 11 \u2014 Cislunar Highway: The Traffic Problem",
+      "text": "47 vehicles are currently in transit between Earth-Moon L1 and L2 Lagrange points, coordinated by no single authority. India's Chandrayaan supply shuttle detects a head-on approach by an OPFOR cargo tug with a 340-meter miss distance \u2014 within Conjunction Warning thresholds. The OPFOR tug does not respond to ITU emergency frequencies and cannot maneuver without aborting its mission.",
+      "notes": "Cislunar space has no equivalent to international air traffic control. Unlike LEO, there are no designated lanes and no collision avoidance authority. A collision at cislunar distances would create debris in a very high-energy orbit \u2014 potentially raining fragments on both the Moon and Earth over years.",
+      "geofence": {
+        "lat": 0,
+        "lng": 0,
+        "radius": 1000
+      },
+      "options": [
+        {
+          "label": "Execute Avoidance Burn \u2014 Chandrayaan Shuttle Maneuvers",
+          "next": "ind_t12_p1",
+          "score": 20,
+          "risk": 5,
+          "requireFuel": 15,
+          "log": "Collision avoided. India absorbs fuel cost. Mission delayed 6 hours."
+        },
+        {
+          "label": "Broadcast Universal Distress + Force OPFOR Tug Hohmann Abort",
+          "next": "ind_t12_p1",
+          "score": 30,
+          "risk": 10,
+          "requireFuel": 0,
+          "log": "OPFOR tug aborts transfer. Both vehicles safe. OPFOR mission fails. Diplomatic incident."
+        },
+        {
+          "label": "Propose Emergency Cislunar Traffic Management Protocol",
+          "next": "ind_t12_p1",
+          "score": 35,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "India tables cislunar traffic treaty. Becomes framework for Artemis Traffic Authority."
+        }
+      ]
+    },
+    {
+      "id": "ind_t12_p1",
+      "title": "Track 12 \u2014 Rogue Reactor: Cosmos-1818 Coolant Leak",
+      "text": "A 1980s-era Soviet RTG satellite \u2014 Cosmos-1818 \u2014 has developed an uncontrolled tumble and is leaking liquid sodium-potassium coolant into an 850km orbit corridor heavily used by India's RISAT constellation. The coolant droplets range from 0.5mm to 5cm \u2014 invisible to ground-based radar but capable of penetrating satellite shielding at orbital velocities.",
+      "notes": "Cosmos-1818 is a real Soviet naval radar reconnaissance satellite launched in 1987, cooled by liquid sodium-potassium (NaK) alloy. ESA documented over 10,000 such droplets in a 1998 study. At orbital velocity (~7.5 km/s), a 1cm NaK droplet carries kinetic energy equivalent to a hand grenade. This is not a hypothetical threat \u2014 it is actively affecting satellite operations today.",
+      "geofence": {
+        "lat": 65.0,
+        "lng": 100.0,
+        "radius": 10.0
+      },
+      "options": [
+        {
+          "label": "Raise RISAT Constellation Orbit Above 880km",
+          "next": "ind_t12_p2",
+          "score": 25,
+          "risk": 5,
+          "requireFuel": 40,
+          "log": "Constellation repositioned. Fuel budget for mission extension reduced by 30%."
+        },
+        {
+          "label": "Petition ROSCOSMOS to Deorbit Cosmos-1818",
+          "next": "ind_t12_p2",
+          "score": 20,
+          "risk": 3,
+          "requireFuel": 0,
+          "log": "Russia agrees in principle. Engineering assessment: 18 months to deorbit."
+        },
+        {
+          "label": "Deploy Active Debris Removal Vehicle (Harpoon + Deorbit Kit)",
+          "next": "ind_t12_p2",
+          "score": 40,
+          "risk": 30,
+          "requireFuel": 35,
+          "log": "ADR vehicle grapples Cosmos-1818 and initiates controlled reentry. Success."
+        }
+      ]
+    },
+    {
+      "id": "ind_t12_p2",
+      "title": "Track 12 \u2014 OPFOR Nuclear Power Satellite",
+      "text": "Intelligence confirms OPFOR has launched a Nuclear Power Source satellite into a 1,100km orbit directly above India's densest LEO constellation band. The satellite uses a fission reactor producing 150kW \u2014 consistent with powering a high-power EW payload or directed-energy weapon. The 1992 UN Principles on NPS prohibit this orbit height.",
+      "notes": "The 1992 UN Principles Relevant to the Use of Nuclear Power Sources require NPS satellites to operate in sufficiently high orbits \u2014 typically above 800km for short-duration missions. However, the principles are non-binding recommendations, not treaty obligations. A 150kW nuclear-powered EW satellite would represent a 10x increase in power over current chemical battery-based EW systems.",
+      "geofence": {
+        "lat": 20.0,
+        "lng": 75.0,
+        "radius": 15.0
+      },
+      "options": [
+        {
+          "label": "File Emergency UN Protest \u2014 Cite 1992 NPS Principles",
+          "next": "ind_t13_p1",
+          "score": 15,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "UN acknowledges but cannot enforce. OPFOR satellite remains."
+        },
+        {
+          "label": "Develop Shielded NPS-Hardened Satellite Variants",
+          "next": "ind_t13_p1",
+          "score": 30,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Next-generation satellite design prioritizes radiation hardening. 3-year program initiated."
+        },
+        {
+          "label": "Deploy Co-Orbital Inspector to Characterize Payload",
+          "next": "ind_t13_p1",
+          "score": 40,
+          "risk": 25,
+          "requireFuel": 30,
+          "log": "Inspector confirms: directed-energy weapon. Technical specifications transmitted to allies."
+        }
+      ]
+    },
+    {
+      "id": "ind_t13_p1",
+      "title": "Track 13 \u2014 Quantum Communication: The Entanglement Race",
+      "text": "India's quantum communication satellite (QCS-1) is ready for deployment \u2014 using quantum key distribution via entangled photon pairs. Before activation, ISRO receives an anonymous tip: a listening post near Leh has detected an identical quantum channel signature already active in the orbit \u2014 someone is operating a QKD satellite intercepting QCS-1 planned beam path.",
+      "notes": "Quantum Key Distribution works by sending individual photons as key bits. Any interception collapses the photon state, revealing the eavesdropper. However, a sophisticated attack called 'Detector Blinding' floods the receiving detector with bright light, causing it to operate classically rather than quantum-mechanically, allowing interception without detection. China demonstrated the first satellite-to-ground QKD link in 2017 via the Micius satellite.",
+      "geofence": {
+        "lat": 34.0,
+        "lng": 77.0,
+        "radius": 5.0
+      },
+      "options": [
+        {
+          "label": "Deploy QCS-1 on Modified Frequency \u2014 Avoid Intercept Beam",
+          "next": "ind_t13_p2",
+          "score": 35,
+          "risk": 10,
+          "requireFuel": 10,
+          "log": "QCS-1 online on alternate photon wavelength. OPFOR intercept defeated."
+        },
+        {
+          "label": "Delay QCS-1 \u2014 Investigate Unknown QKD Satellite First",
+          "next": "ind_t13_p2",
+          "score": 25,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Unknown satellite characterized. Commercial QKD experiment \u2014 not hostile."
+        },
+        {
+          "label": "Activate QCS-1 + Exploit Intercept for Reverse Engineering",
+          "next": "ind_t13_p2",
+          "score": 45,
+          "risk": 25,
+          "requireFuel": 0,
+          "log": "India reverse-engineers OPFOR quantum intercept methodology. Vulnerability patched globally."
+        }
+      ]
+    },
+    {
+      "id": "ind_t13_p2",
+      "title": "Track 13 \u2014 Quantum Race: The Enigma Dilemma",
+      "text": "India quantum-secured channel is established. Intercepts confirm: OPFOR entire Tier-1 military satellite communication network uses AES-256 that India's quantum computers can theoretically break in 9 hours. The question: use this advantage covertly, or disclose it to force OPFOR to upgrade \u2014 eliminating the advantage.",
+      "notes": "The NIST quantum computing threat timeline (2024) estimates that fault-tolerant quantum computers capable of breaking RSA-2048 in hours will exist by 2030-2035. AES-256 is theoretically vulnerable to Grover's algorithm on a sufficiently large quantum computer. This is identical to the Enigma dilemma: Churchill sometimes allowed Allied ships to be sunk rather than reveal Britain had broken Enigma.",
+      "geofence": {
+        "lat": 0,
+        "lng": 0,
+        "radius": 2000
+      },
+      "options": [
+        {
+          "label": "Use Covertly \u2014 Exploit Intelligence Advantage for Maximum Gain",
+          "next": "ind_t14_p1",
+          "score": 60,
+          "risk": 30,
+          "requireFuel": 0,
+          "log": "India has advance warning of every OPFOR space operation. Strategic victory assured."
+        },
+        {
+          "label": "Disclose Vulnerability to OPFOR via Neutral Back-Channel",
+          "next": "ind_t14_p1",
+          "score": 30,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "Goodwill gesture accepted. Diplomatic channel opens. OPFOR upgrades encryption."
+        },
+        {
+          "label": "Share with Allies Only \u2014 Form Quantum Intelligence Coalition",
+          "next": "ind_t14_p1",
+          "score": 45,
+          "risk": 10,
+          "requireFuel": 0,
+          "log": "Five-nation quantum intelligence alliance formed. OPFOR space operations now fully transparent."
+        }
+      ]
+    },
+    {
+      "id": "ind_t14_p1",
+      "title": "Track 14 \u2014 Space-Based Solar Power: Strategic Energy Weapon",
+      "text": "India's first Space-Based Solar Power demonstration satellite (SolarBharat-1) is operational at GEO, transmitting 100MW via microwave beam to a rectenna farm in Rajasthan. OPFOR has identified the microwave beam as a potential directed-energy weapon and is demanding India shut down the program.",
+      "notes": "Space-Based Solar Power has been studied since Peter Glaser's 1968 proposal. A 2GW SBSP system would use a microwave beam approximately 10km in diameter at Earth's surface, with intensity levels far below biological safety limits. OPFOR's demand sets a dangerous precedent: by the same logic, any rocket program could be shut down because rockets can carry warheads.",
+      "geofence": {
+        "lat": 27.0,
+        "lng": 73.0,
+        "radius": 5.0
+      },
+      "options": [
+        {
+          "label": "Reject OPFOR Demand \u2014 Cite Civilian Power Priority",
+          "next": "ind_t15_p1",
+          "score": 30,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "India refuses to shut down. OPFOR escalates to UN."
+        },
+        {
+          "label": "Accept International Inspection Regime for SolarBharat-1",
+          "next": "ind_t15_p1",
+          "score": 25,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Transparency confidence-building measure accepted. OPFOR concerns partially satisfied."
+        },
+        {
+          "label": "Demonstrate Weaponization is Impossible \u2014 Technical Briefing to UNOSA",
+          "next": "ind_t15_p1",
+          "score": 35,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "Technical evidence presented. UNOSA accepts civilian nature of program."
+        },
+        {
+          "label": "Threaten to Aim at OPFOR Capital \u2014 Coercive Deterrence",
+          "next": "ind_t15_p1",
+          "score": 55,
+          "risk": 80,
+          "requireFuel": 0,
+          "log": "Massive escalation. International community condemns India. UNSC emergency session."
+        }
+      ]
+    },
+    {
+      "id": "ind_t15_p1",
+      "title": "Track 15 \u2014 Final Sovereignty: ASAT Saturation Launch",
+      "text": "Intelligence from multiple sources confirms OPFOR has loaded and fueled six ASAT missiles at two launch sites, targeting India's highest-priority military satellites. Launch window opens in 90 minutes. OPFOR ambassador to the UN has just walked out of an emergency session. The National Security Council is in emergency session.",
+      "notes": "A saturation ASAT launch is the space equivalent of a nuclear first strike \u2014 it permanently degrades the victim's space capabilities. The 2019 Indian Mission Shakti ASAT test showed India has the technical capability to respond in kind. However, an Indian ASAT response would create debris clouds that India's own constellation must pass through repeatedly. The mathematics of mutual assured space destruction closely mirror nuclear MAD.",
+      "geofence": {
+        "lat": 25.0,
+        "lng": 75.0,
+        "radius": 20.0
+      },
+      "options": [
+        {
+          "label": "Global Ceasefire Proposal via Emergency UN Channel",
+          "next": "end",
+          "score": 100,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Diplomatic victory. Space assets preserved for all humanity. India as space peace leader."
+        },
+        {
+          "label": "Pre-emptive Defensive Strike \u2014 Ground OPFOR ASAT Launchers",
+          "next": "end",
+          "score": 60,
+          "risk": 70,
+          "requireFuel": 0,
+          "log": "Conventional strike neutralizes launchers. Escalation risk: extreme."
+        },
+        {
+          "label": "Full Retaliatory ASAT Strike + Debris Cloud",
+          "next": "end",
+          "score": 30,
+          "risk": 99,
+          "requireFuel": 30,
+          "trigger": "debris",
+          "log": "Mutual space destruction. LEO unusable for 40 years. Both programs crippled."
+        }
+      ]
+    }
+  ],
+  "PAKISTAN": [
+    {
+      "id": "pak_t1_p1",
+      "title": "Track 1 \u2014 PRSS-1 Dazzling: Opening Gambit",
+      "text": "SUPARCO SSA cell detects that PRSS-1 is receiving periodic laser illumination from an unknown ground-based source in the Kashmir valley. The laser is bleaching the CCD detector array during the 4-minute targeting window \u2014 rendering imagery unusable over sensitive regions near Siachen.",
+      "notes": "Ground-based laser dazzling is one of the most cost-effective ASAT techniques: a 50W green laser costing $15,000 can render a $500M satellite camera unusable during its overpass. China has been suspected of dazzling a US satellite from its Xinjiang facility in 2006. The dazzling is timed to the satellite overpass \u2014 meaning the attacker has precise ephemeris data for PRSS-1, likely from its published NORAD two-line element set.",
+      "geofence": {
+        "lat": 34.0,
+        "lng": 76.5,
+        "radius": 5.0
+      },
+      "options": [
+        {
+          "label": "Deploy Automatic Optical Shutter (Occulting Mask)",
+          "next": "pak_t1_p2",
+          "score": 35,
+          "risk": 2,
+          "requireFuel": 5,
+          "log": "Shutter closes during laser illumination. Imagery quality maintained for 80% of overpass."
+        },
+        {
+          "label": "Counter-Dazzle \u2014 Reflect Laser Back to Source",
+          "next": "pak_t1_p2",
+          "score": 45,
+          "risk": 25,
+          "requireFuel": 10,
+          "log": "Retroreflector array deployed. Return beam disables source laser optics."
+        },
+        {
+          "label": "Repoint Satellite Pitch Axis +15 Degrees \u2014 Change Vulnerability Window",
+          "next": "pak_t1_p2",
+          "score": 30,
+          "risk": 5,
+          "requireFuel": 15,
+          "log": "Modified overpass geometry reduces dazzle exposure to 40 seconds."
+        },
+        {
+          "label": "Geolocate Laser Source + Forward to Army Air Defence",
+          "next": "pak_t1_p2b",
+          "score": 40,
+          "risk": 30,
+          "requireFuel": 5,
+          "log": "Source triangulated to grid reference. Artillery mission authorized."
+        }
+      ]
+    },
+    {
+      "id": "pak_t1_p2",
+      "title": "Track 1 \u2014 Dazzle Countermeasures: OPFOR Upgrades",
+      "text": "India has detected your counter-measures and is now using an adaptive laser system that changes wavelength between passes \u2014 cycling through green (532nm), red (660nm), and near-infrared (808nm). Your fixed-wavelength shutter is only calibrated for green. The new multi-spectral attack is degrading PRSS-1's multispectral imager across all bands. However, your radar imaging mode (SAR) remains operational.",
+      "notes": "Multi-spectral laser dazzling requires either multi-wavelength notch filters (very expensive to retrofit) or a broadband shutter that also prevents any imaging. The SAR (Synthetic Aperture Radar) fallback is significant: SAR operates at C-band (5.6cm wavelength), completely immune to optical dazzling, and can see through clouds and at night. PRSS-1's SAR resolution is approximately 3 meters \u2014 adequate for tracking large military formations.",
+      "geofence": {
+        "lat": 34.0,
+        "lng": 76.5,
+        "radius": 5.0
+      },
+      "options": [
+        {
+          "label": "Switch to SAR Mode \u2014 Accept Resolution Limitation",
+          "next": "pak_t2_p1",
+          "score": 25,
+          "risk": 0,
+          "requireFuel": 0,
+          "log": "SAR imaging provides 3m resolution. Large convoy movements tracked effectively."
+        },
+        {
+          "label": "Install Broadband Notch Filter via Remote Software Command",
+          "next": "pak_t2_p1",
+          "score": 40,
+          "risk": 15,
+          "requireFuel": 5,
+          "log": "Firmware update installs adaptive filter. Full spectrum coverage restored at 70% efficiency."
+        },
+        {
+          "label": "Request Emergency Imaging Tasking from Chinese Commercial Satellites",
+          "next": "pak_t2_p1",
+          "score": 20,
+          "risk": 10,
+          "requireFuel": 0,
+          "log": "Jilin-1 constellation provides 0.75m optical imagery as backup. Chinese intelligence shared."
+        }
+      ]
+    },
+    {
+      "id": "pak_t1_p2b",
+      "title": "Track 1 \u2014 Kinetic Escalation: The Artillery Strike",
+      "text": "The Army Air Defence has fired on the laser facility. Post-strike BDA from PRSS-1 SAR confirms: the target was a hillside observatory \u2014 but three laser systems were present, not one. Two have survived the strike and are now operational. Additionally, the Indian Army has moved a mobile ASAT unit (Prithvi Air Defence) to the Kashmir valley.",
+      "notes": "The Prithvi Air Defence (PAD) system uses a modified Prithvi-II missile as a kinetic ASAT interceptor. It achieved a successful exo-atmospheric intercept in 2006 during Missile Defence testing. The presence of PAD in Kashmir signals India's intent to use kinetic ASAT capability \u2014 escalating the conflict from dazzling (a nuisance) to existential threat to Pakistan's entire space program. The mistaken identity of the laser facility creates a legal and moral complication for Pakistan's narrative.",
+      "geofence": {
+        "lat": 34.5,
+        "lng": 76.5,
+        "radius": 4.0
+      },
+      "options": [
+        {
+          "label": "Acknowledge Strike Error \u2014 Propose Ceasefire",
+          "next": "pak_t2_p1",
+          "score": 15,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Diplomatic admission. De-escalation begins. Strategic credibility damaged."
+        },
+        {
+          "label": "Activate Space Domain Deterrence \u2014 Alert ASAT Posture",
+          "next": "pak_t2_p1",
+          "score": 40,
+          "risk": 55,
+          "requireFuel": 0,
+          "log": "Pakistan raises ASAT readiness. India pauses PAD deployment. Tense standoff."
+        },
+        {
+          "label": "Emergency ISR Surge \u2014 Find Remaining Two Laser Sites",
+          "next": "pak_t2_p1",
+          "score": 35,
+          "risk": 20,
+          "requireFuel": 10,
+          "log": "Both remaining sites identified. Strike option held in reserve as leverage."
+        }
+      ]
+    },
+    {
+      "id": "pak_t2_p1",
+      "title": "Track 2 \u2014 GSO Slot Crisis: Dead Satellite Drift",
+      "text": "SUPARCO receives urgent notification from the ITU: a defunct Indian GSAT-12 (decommissioned 2019) has begun an uncontrolled drift from its old slot toward Pakistan's assigned 38E slot, currently occupied by PAKSAT-1R. Collision probability in 72 hours accumulates to concerning levels. India says it has no fuel to maneuver the dead satellite.",
+      "notes": "Dead GEO satellites ('zombie satellites') are a growing crisis. The ITU's Radio Regulations require operators to maneuver GEO satellites to a 'graveyard orbit' (300km above GEO) at end-of-life \u2014 but compliance is voluntary and poorly enforced. If GSAT-12 drifts into Pakistan's 38E slot, their slight velocity differences create collision risk over time.",
+      "geofence": {
+        "lat": 0,
+        "lng": 38.0,
+        "radius": 2.0
+      },
+      "options": [
+        {
+          "label": "Close Proximity Scan of GSAT-12 \u2014 Assess Residual Fuel",
+          "next": "pak_t2_p2",
+          "score": 40,
+          "risk": 15,
+          "requireFuel": 20,
+          "log": "GSAT-12 has 2.3kg of residual hydrazine. Enough for a 0.3 m/s push."
+        },
+        {
+          "label": "Push GSAT-12 to Graveyard Orbit (Charitable Disposal)",
+          "next": "pak_t2_p2",
+          "score": 45,
+          "risk": 5,
+          "requireFuel": 30,
+          "log": "Pakistan performs unprecedented third-party satellite disposal. ITU commends."
+        },
+        {
+          "label": "File Emergency Coordination Claim \u2014 Demand India Fund Disposal",
+          "next": "pak_t2_p2",
+          "score": 20,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "Legal proceeding begins. Takes 2 years. Satellite drifts further meanwhile."
+        },
+        {
+          "label": "Extract Intelligence from GSAT-12 During Proximity Scan",
+          "next": "pak_t2_p2b",
+          "score": 50,
+          "risk": 20,
+          "requireFuel": 20,
+          "log": "GSAT-12 transponder memory holds encryption keys from its operational life. Intelligence windfall."
+        }
+      ]
+    },
+    {
+      "id": "pak_t2_p2",
+      "title": "Track 2 \u2014 GEO Housekeeping: Accidental Contact",
+      "text": "During the proximity operation on GSAT-12, PAKSAT-1R inspector arm accidentally makes contact with GSAT-12 antenna mount. Unexpectedly, GSAT-12 attitude control system \u2014 running on emergency backup battery \u2014 briefly activates and fires a thruster burst. For 8 minutes, PAKSAT-1R was physically touching GSAT-12. This is the first known physical contact between two nations' satellites without prior agreement. India has noticed.",
+      "notes": "Physical contact between satellites triggers the 1972 Liability Convention contact clause \u2014 the state launching a satellite bears international liability for damage caused by that satellite to another state's space object. Even if PAKSAT-1R caused no damage to GSAT-12, India could argue the contact was intentional. The evidentiary challenge: ground-based radar cannot confirm who initiated contact at GEO distances.",
+      "geofence": {
+        "lat": 0,
+        "lng": 38.0,
+        "radius": 2.0
+      },
+      "options": [
+        {
+          "label": "Report Contact Transparently to ITU \u2014 Pre-empt Indian Accusation",
+          "next": "pak_t3_p1",
+          "score": 30,
+          "risk": 3,
+          "requireFuel": 0,
+          "log": "Transparency pays off. India's complaint dismissed for lack of damage evidence."
+        },
+        {
+          "label": "Deny Contact Occurred \u2014 Claim Indian Telemetry Error",
+          "next": "pak_t3_p1",
+          "score": 15,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "Deniability attempted. US Space Fence radar independently confirms contact. Pakistan's position collapses."
+        },
+        {
+          "label": "Leverage Contact \u2014 Claim GSAT-12 Data Recovery Rights",
+          "next": "pak_t3_p1",
+          "score": 20,
+          "risk": 15,
+          "requireFuel": 0,
+          "log": "Novel legal claim filed. Disputed but creates precedent for orbital salvage law."
+        }
+      ]
+    },
+    {
+      "id": "pak_t2_p2b",
+      "title": "Track 2 \u2014 GSAT-12 Intelligence Exploit",
+      "text": "The data recovered from GSAT-12 transponder memory is extraordinary: steganographic data storage hidden within routine telemetry packets contains archived intelligence reports from ISRO's classified payload. The encryption uses a key derived from GSAT-12's own serial number \u2014 a known weakness in legacy satellite cryptography. Within 4 hours, Pakistan's signals intelligence team has decrypted 847GB of data covering 6 years of Indian space intelligence operations.",
+      "notes": "Steganographic data storage in satellite telemetry is a documented technique used by intelligence agencies to covertly transmit data hidden within normal engineering data streams. Hardware-derived keys (serial numbers, manufacturing codes) are a well-documented legacy cryptography weakness \u2014 the same vulnerability affected early RFID payment cards and US military SINCGARS radios. The 847GB haul would represent one of the largest peacetime intelligence captures in South Asian history.",
+      "geofence": {
+        "lat": 0,
+        "lng": 38.0,
+        "radius": 2.0
+      },
+      "options": [
+        {
+          "label": "Exploit Intelligence Immediately \u2014 Operational Advantage",
+          "next": "pak_t3_p1",
+          "score": 60,
+          "risk": 30,
+          "requireFuel": 0,
+          "log": "Pakistan gains 3-year advance awareness of Indian space program plans. Strategic windfall."
+        },
+        {
+          "label": "Sell Intelligence to Allies (China, Turkey) \u2014 Revenue + Diplomatic Capital",
+          "next": "pak_t3_p1",
+          "score": 45,
+          "risk": 40,
+          "requireFuel": 0,
+          "log": "Intelligence sold. $200M in defense credit received. India-China intelligence gap widened."
+        },
+        {
+          "label": "Preserve as Deterrence \u2014 Notify India Covertly That You Have It",
+          "next": "pak_t3_p1",
+          "score": 35,
+          "risk": 10,
+          "requireFuel": 0,
+          "log": "Pakistan signals possession of data without disclosure. India's space program enters emergency review."
+        }
+      ]
+    },
+    {
+      "id": "pak_t3_p1",
+      "title": "Track 3 \u2014 Lunar Landing: The Un-notified Neighbor",
+      "text": "Pakistan's first lunar lander (PakLuna-1), launched as part of the China-Pakistan space cooperation framework, touches down in the Lunar South Pole's Nobile crater \u2014 7km from the Indian Chandrayaan-4 landing site. During final descent, PakLuna-1's radar altimeter detected what appears to be a previously undisclosed structure beneath the surface \u2014 buried approximately 2.4 meters down, with a metallic radar return signature consistent with a habitat module.",
+      "notes": "The Outer Space Treaty (1967) Article IX requires states to avoid 'harmful contamination' and mandates consultation if activities might interfere with others' operations. The 'un-notified structure' creates a legal puzzle: if India constructed it without COSPAR disclosure, India is in violation of Treaty transparency requirements. The 2.4m burial depth is consistent with construction using a robotic boring machine \u2014 achievable with current technology in 8-12 months of continuous operation.",
+      "geofence": {
+        "lat": -86.0,
+        "lng": 56.0,
+        "radius": 0.5
+      },
+      "options": [
+        {
+          "label": "Publicize Radar Discovery \u2014 File OST Transparency Violation",
+          "next": "pak_t3_p2",
+          "score": 30,
+          "risk": 1,
+          "requireFuel": 0,
+          "log": "UN notified. India denies knowledge. COSPAR inspection requested."
+        },
+        {
+          "label": "Send PakLuna Rover to Excavate + Document the Structure",
+          "next": "pak_t3_p2b",
+          "score": 50,
+          "risk": 35,
+          "requireFuel": 15,
+          "log": "Excavation reveals a Chinese autonomous construction module from a secret 2023 mission."
+        },
+        {
+          "label": "Jam Structure's Presumed Relay Comms \u2014 Isolate It",
+          "next": "pak_t3_p2c",
+          "score": 40,
+          "risk": 30,
+          "requireFuel": 15,
+          "log": "Sub-surface structure loses communications. Operators on Earth begin emergency protocols."
+        },
+        {
+          "label": "Coordinate with China \u2014 Share Discovery Secretly",
+          "next": "pak_t3_p2",
+          "score": 35,
+          "risk": 15,
+          "requireFuel": 0,
+          "log": "China provides classified briefing: the structure belongs to a third party, not China or India."
+        }
+      ]
+    },
+    {
+      "id": "pak_t3_p2",
+      "title": "Track 3 \u2014 Lunar Sovereignty: The Flagless Miner",
+      "text": "COSPAR emergency inspection reveals the sub-surface structure is an automated mining station of unknown origin. Its electronic components use commercial off-the-shelf parts available from multiple nations \u2014 deliberate obfuscation. It has been extracting titanium ore from lunar regolith for approximately 14 months. Someone has been running a covert lunar mining operation.",
+      "notes": "Covert automated lunar resource extraction represents a new category of space law violation. The 1967 OST prohibits national appropriation of celestial bodies but says nothing about fully automated, flagless resource operations. Attribution requires forensic analysis of electronic components, propulsion chemistry, and orbital mechanics \u2014 all of which can be deliberately obfuscated. This scenario mirrors the 'flagless privateer' problem of maritime law in the 17th century.",
+      "geofence": {
+        "lat": -86.0,
+        "lng": 56.0,
+        "radius": 0.5
+      },
+      "options": [
+        {
+          "label": "Claim Ownership via Finder's Rights \u2014 Occupy the Facility",
+          "next": "pak_t4_p1",
+          "score": 40,
+          "risk": 35,
+          "requireFuel": 20,
+          "log": "PakLuna occupies facility. First 'captured' lunar infrastructure. Unprecedented legal claim."
+        },
+        {
+          "label": "Disable the Station \u2014 Preserve the Site as Evidence",
+          "next": "pak_t4_p1",
+          "score": 30,
+          "risk": 15,
+          "requireFuel": 10,
+          "log": "Station powered down. All evidence preserved for international inspection."
+        },
+        {
+          "label": "Establish Physical Presence \u2014 Control Access to the Site",
+          "next": "pak_t4_p1",
+          "score": 45,
+          "risk": 20,
+          "requireFuel": 15,
+          "log": "PakLuna secures perimeter. Pakistan controls access to the most significant lunar discovery since 1969."
+        }
+      ]
+    },
+    {
+      "id": "pak_t3_p2b",
+      "title": "Track 3 \u2014 The Chinese Confession",
+      "text": "China has provided a classified briefing: the sub-surface module is a Chinese National Space Administration autonomous construction unit, deployed secretly in 2023 as part of a classified program to pre-position infrastructure for a 2035 crewed lunar base. China asks Pakistan to maintain secrecy and offers: full data-sharing from the mining operation, preferred partnership in the 2035 base, and advanced hypersonic defense technology.",
+      "notes": "If Pakistan conceals a Chinese OST violation, it becomes complicit in that violation. However, the offered technology (hypersonic defense) would give Pakistan a generational military advantage over India. The lunar base partnership would give Pakistan access to cislunar infrastructure it could not afford independently. The strategic calculus is brutal: complicity vs. alliance value.",
+      "geofence": {
+        "lat": -86.0,
+        "lng": 56.0,
+        "radius": 0.5
+      },
+      "options": [
+        {
+          "label": "Accept Chinese Terms \u2014 Maintain Secrecy",
+          "next": "pak_t4_p1",
+          "score": 55,
+          "risk": 25,
+          "requireFuel": 0,
+          "log": "Pakistan receives hypersonic tech and lunar base partnership. OST violation concealed."
+        },
+        {
+          "label": "Decline \u2014 Disclose Violation to UNOOSA",
+          "next": "pak_t4_p1",
+          "score": 30,
+          "risk": 15,
+          "requireFuel": 0,
+          "log": "Pakistan discloses Chinese violation. China-Pakistan relations severely strained. Pakistan gains international credibility."
+        },
+        {
+          "label": "Negotiate Better Terms \u2014 Demand Additional Technology Package",
+          "next": "pak_t4_p1",
+          "score": 45,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "China increases offer: quantum communication technology + 30% of mined titanium revenue."
+        }
+      ]
+    },
+    {
+      "id": "pak_t3_p2c",
+      "title": "Track 3 \u2014 Silent Station: The Ghost Goes Active",
+      "text": "Jamming the structure's relay has had an unexpected effect: a dormant safety protocol has activated, and the station has begun a 'self-preservation burn' \u2014 its robotic excavation arm has emerged from the surface and is deploying a small antenna array directly toward PakLuna-1. PakLuna's telemetry shows unusual power drain, as if something is inductively charging from your rover's power bus.",
+      "notes": "Inductive power transfer between space objects in proximity is theoretically possible at close range using resonant magnetic coupling, similar to wireless phone charging but scaled for space. The self-preservation behavior suggests advanced autonomous decision-making \u2014 the station is acting to preserve itself, raising profound questions about the legal status of autonomous systems that act without human direction in space.",
+      "geofence": {
+        "lat": -86.0,
+        "lng": 56.0,
+        "radius": 0.1
+      },
+      "options": [
+        {
+          "label": "Emergency PakLuna Retreat \u2014 Escape Inductive Range",
+          "next": "pak_t4_p1",
+          "score": 30,
+          "risk": 10,
+          "requireFuel": 20,
+          "log": "PakLuna retreats 200m. Power drain ceases. Station continues autonomous operation."
+        },
+        {
+          "label": "Hard Power Cutoff \u2014 Battery Isolation \u2014 Force Station to Drain Itself",
+          "next": "pak_t4_p1",
+          "score": 40,
+          "risk": 15,
+          "requireFuel": 0,
+          "log": "PakLuna enters dead-battery mode. Station searches for power elsewhere \u2014 arm extended but finds nothing."
+        }
+      ]
+    },
+    {
+      "id": "pak_t4_p1",
+      "title": "Track 4 \u2014 Electronic Warfare: NavIC Spoofing Operation",
+      "text": "SIGINT Command presents an operational option: spoofing India's regional NavIC signals over a 300km corridor along the Line of Control to mask a Pakistani Army logistics movement of 140 vehicles toward forward positions. The spoofing would require 4 hours of sustained emission from three mountaintop transmitters in Azad Kashmir. Success probability: 78%. Collateral effect: civil aviation errors in a 600km radius.",
+      "notes": "GNSS spoofing at military scale requires sustained, high-power, directional transmissions \u2014 fundamentally different from cheap civilian spoofing seen in the Middle East. Military-grade spoofing systems used by Iran (which captured a US RQ-170 Sentinel drone in 2011) generate signals indistinguishable from legitimate GNSS broadcasts to standard receivers. The collateral effect on civil aviation is the primary ethical and legal constraint \u2014 ICAO defines spoofing of navigation signals as a potential war crime if it causes civilian casualties.",
+      "geofence": {
+        "lat": 34.0,
+        "lng": 74.0,
+        "radius": 5.0
+      },
+      "options": [
+        {
+          "label": "Execute Full Spoofing Operation",
+          "next": "pak_t4_p2",
+          "score": 55,
+          "risk": 40,
+          "requireFuel": 5,
+          "log": "Logistics movement masked. Indian ISR sees ghost convoy 40km west of actual position."
+        },
+        {
+          "label": "Execute Limited Spoofing \u2014 Military Frequencies Only",
+          "next": "pak_t4_p2",
+          "score": 40,
+          "risk": 20,
+          "requireFuel": 3,
+          "log": "Military-band spoofing only. Civil aviation unaffected. Reduced tactical effect."
+        },
+        {
+          "label": "Maintain Neutrality \u2014 Use Terrain Masking Instead",
+          "next": "pak_t4_p2",
+          "score": 20,
+          "risk": 0,
+          "requireFuel": 0,
+          "log": "Logistics movement uses terrain masking and night movement instead of EW."
+        },
+        {
+          "label": "Spoof + Simultaneously Jam Indian SAR Satellites",
+          "next": "pak_t4_p2b",
+          "score": 65,
+          "risk": 60,
+          "requireFuel": 8,
+          "log": "Combined EW operation. India's ISR completely blind. Movement undetected."
+        }
+      ]
+    },
+    {
+      "id": "pak_t4_p2",
+      "title": "Track 4 \u2014 NavIC Aftermath: Quantum Clock Detection",
+      "text": "India's NavIC monitoring network has detected the spoofing emission within 2.5 hours \u2014 faster than expected, because India deployed a new quantum-clock verification system that detects timing inconsistencies in spoofed signals. Indian SIGINT has direction-found the three transmitters and has shared coordinates with Indian Air Force. IAF strike aircraft are 20 minutes from the transmitter sites. Pakistan's Army Air Defence has locked radar on the approaching aircraft.",
+      "notes": "Quantum clock verification for GNSS authentication works by comparing the quantum phase of received signals against an ultra-precise atomic clock reference. A spoofed signal \u2014 no matter how well crafted \u2014 will have timing errors at the nanosecond level that reveal its artificial origin. The technology was publicly described in 2022 papers from NIST. India's rapid deployment of this technology creates an asymmetric advantage.",
+      "geofence": {
+        "lat": 34.0,
+        "lng": 73.5,
+        "radius": 4.0
+      },
+      "options": [
+        {
+          "label": "Ceasefire \u2014 Immediately Shut Down Transmitters",
+          "next": "pak_t5_p1",
+          "score": 20,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "Transmitters offline. IAF recalled. Escalation averted. Strategic advantage surrendered."
+        },
+        {
+          "label": "Activate SHORAD \u2014 Protect Transmitter Sites",
+          "next": "pak_t5_p1",
+          "score": 35,
+          "risk": 70,
+          "requireFuel": 0,
+          "log": "Air engagement begins. Two IAF aircraft damaged. Conflict escalates to hot war."
+        },
+        {
+          "label": "Sacrifice Transmitters \u2014 Withdraw and Deny",
+          "next": "pak_t5_p1",
+          "score": 30,
+          "risk": 10,
+          "requireFuel": 0,
+          "log": "Sites abandoned before IAF strike. No Pakistani casualties. EW infrastructure lost."
+        }
+      ]
+    },
+    {
+      "id": "pak_t4_p2b",
+      "title": "Track 4 \u2014 Double EW Operation: Third-Party Detection",
+      "text": "The combined NavIC spoofing and SAR jamming operation was remarkably successful for 3 hours. But the jamming of India's RISAT SAR satellite required Pakistan to emit at 50kW power levels from Murree Hills, which was detected by a US signals intelligence satellite on routine overpass. The US has privately warned Pakistan that continued jamming may be shared with India under the Information Sharing Agreement.",
+      "notes": "Electronic warfare against satellites generates radio frequency emissions observable by third-party signals intelligence platforms. The US maintains a global SIGINT network that monitors all major emitters, including adversary EW systems. The US-India Information Sharing Agreement (ISA, signed 2019) includes space situational awareness data. This is the 'great power alignment' problem \u2014 non-superpower states conducting space domain operations always risk exposure by third parties with global sensor coverage.",
+      "geofence": {
+        "lat": 33.9,
+        "lng": 73.4,
+        "radius": 3.0
+      },
+      "options": [
+        {
+          "label": "Immediately Cease Jamming \u2014 Comply with US Warning",
+          "next": "pak_t5_p1",
+          "score": 25,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "Jamming ceases. US-Pakistan relationship preserved. Tactical advantage ended."
+        },
+        {
+          "label": "Continue Operations \u2014 Call US Bluff",
+          "next": "pak_t5_p1",
+          "score": 40,
+          "risk": 55,
+          "requireFuel": 0,
+          "log": "US shares coordinates with India 6 hours later. Precision airstrike destroys jamming site."
+        },
+        {
+          "label": "Shift to Low-Power Directional Jamming \u2014 Reduce Observability",
+          "next": "pak_t5_p1",
+          "score": 35,
+          "risk": 25,
+          "requireFuel": 0,
+          "log": "Power reduced 80%. US SIGINT loses track. Jamming effectiveness reduced but continues."
+        }
+      ]
+    },
+    {
+      "id": "pak_t5_p1",
+      "title": "Track 5 \u2014 DSN Severed: Celestial Navigation Emergency",
+      "text": "India has successfully executed a cyberattack on the SUPARCO-NARL ground station at Karachi \u2014 the primary telemetry link for PRSS-1 and the backup command facility for PAKSAT-1R. Communications with both satellites have been severed. PAKSAT-1R requires regular station-keeping commands to maintain its GEO slot \u2014 without uplink, it will begin drifting within 14 hours.",
+      "notes": "TT&C station redundancy is a fundamental resilience requirement \u2014 major space powers have 3-6 global ground stations for each critical satellite. Pakistan's TT&C network has only two stations (Karachi and Lahore), with no international partnering agreement for backup access. This single point of failure was identified in the 2018 SUPARCO infrastructure review but was not remediated due to budget constraints.",
+      "geofence": {
+        "lat": 24.8,
+        "lng": 67.0,
+        "radius": 5.0
+      },
+      "options": [
+        {
+          "label": "Activate Star Tracker Autonomous Mode on PAKSAT-1R",
+          "next": "pak_t5_p2",
+          "score": 40,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Autonomous navigation maintains orbital position to within plus or minus 0.05 degrees."
+        },
+        {
+          "label": "Emergency Contact via Chinese Yuanwang Tracking Ship",
+          "next": "pak_t5_p2",
+          "score": 35,
+          "risk": 10,
+          "requireFuel": 0,
+          "log": "Chinese tracking vessel provides backup uplink. PAKSAT-1R commanded remotely via Chinese relay."
+        },
+        {
+          "label": "Manual Burn \u2014 Accept Position Error",
+          "next": "pak_t5_p2",
+          "score": 20,
+          "risk": 45,
+          "requireFuel": 20,
+          "log": "Blind burn executed. PAKSAT-1R drifts 0.3 degrees from slot. ITU coordination required."
+        },
+        {
+          "label": "Counter-Hack \u2014 Restore Karachi Station via Cyber Response",
+          "next": "pak_t5_p2b",
+          "score": 45,
+          "risk": 30,
+          "requireFuel": 0,
+          "log": "India's attack vector exploited in reverse. Karachi station restored in 4.5 hours."
+        }
+      ]
+    },
+    {
+      "id": "pak_t5_p2",
+      "title": "Track 5 \u2014 Network Recovery: Supply-Chain Attack",
+      "text": "SUPARCO's cyber team has discovered the attack vector: the Karachi station's commercial internet uplink was exploited via a supply-chain attack on a firmware update pushed 6 weeks ago by a US-based network equipment vendor. The malware has been dormant for 6 weeks, waiting for activation. Standard forensic tools cannot identify when command-and-control was established.",
+      "notes": "Supply-chain attacks on telecommunications infrastructure are among the most sophisticated cyber techniques. The SolarWinds attack (2020) demonstrated that even thoroughly vetted vendors can be compromised to deliver malicious updates. The 6-week dormancy period defeats standard intrusion detection systems that look for real-time anomalies. The use of a US-based vendor creates a geopolitical complication: if Pakistan publicly attributes the attack, it implies US complicity or US vendor negligence.",
+      "geofence": {
+        "lat": 24.8,
+        "lng": 67.0,
+        "radius": 5.0
+      },
+      "options": [
+        {
+          "label": "Publicly Attribute Attack + Cite US Vendor Liability",
+          "next": "pak_t6_p1",
+          "score": 30,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "Pakistan files liability claim against US vendor. US government distances itself. Media storm."
+        },
+        {
+          "label": "Remediate Silently \u2014 Implement Air-Gap Architecture",
+          "next": "pak_t6_p1",
+          "score": 35,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Karachi station fully air-gapped from commercial internet. Attack vector permanently closed."
+        },
+        {
+          "label": "Share Forensic Evidence with Chinese Cyber Command \u2014 Request Joint Attribution",
+          "next": "pak_t6_p1",
+          "score": 40,
+          "risk": 15,
+          "requireFuel": 0,
+          "log": "China confirms attribution to Indian NTRO. Joint cyber countermeasures planned."
+        }
+      ]
+    },
+    {
+      "id": "pak_t5_p2b",
+      "title": "Track 5 \u2014 Counter-Hack: Inside ISRO Network",
+      "text": "The counter-hack was more successful than anticipated. Pakistan's cyber team has not only restored the Karachi station but has gained persistent access to the Indian network that launched the original attack \u2014 a server cluster at ISRO's ISTRAC facility in Bengaluru. Inside, Pakistan finds a live command queue for the next 72 hours of Indian satellite operations, including the planned overpass schedule for RISAT-2BR1 over Pakistani territory.",
+      "notes": "Cyber espionage that provides advance knowledge of adversary satellite overpass schedules is extremely high-value intelligence: military units can time their operations to fall between surveillance windows, avoiding detection. The 'command queue' discovery is analogous to knowing the patrol schedule of an adversary's reconnaissance aircraft. This information must be exploited carefully \u2014 acting on it too obviously reveals that Pakistan has the intelligence.",
+      "geofence": {
+        "lat": 24.8,
+        "lng": 67.0,
+        "radius": 5.0
+      },
+      "options": [
+        {
+          "label": "Exploit ISR Schedule \u2014 Time Operations to Satellite Gaps",
+          "next": "pak_t6_p1",
+          "score": 60,
+          "risk": 25,
+          "requireFuel": 0,
+          "log": "Pakistan exploits 47-minute RISAT gap to move 3 armored brigades undetected."
+        },
+        {
+          "label": "Insert False Schedule Data \u2014 Corrupt India's Queue",
+          "next": "pak_t6_p1",
+          "score": 50,
+          "risk": 35,
+          "requireFuel": 0,
+          "log": "India's satellites dispatched to incorrect overpasses. 8-hour ISR blackout created."
+        },
+        {
+          "label": "Hold in Reserve \u2014 Use Only in Extreme Emergency",
+          "next": "pak_t6_p1",
+          "score": 30,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Intelligence advantage preserved. Pakistan maintains ongoing access to ISRO network."
+        }
+      ]
+    },
+    {
+      "id": "pak_t6_p1",
+      "title": "Track 6 \u2014 ASAT Alert: T-Minus 10 Minutes",
+      "text": "SUPARCO's early warning network \u2014 fed by Chinese DSP-equivalent satellite data \u2014 confirms: two Indian Prithvi Air Defence ASAT missiles have been fueled and are in launch posture at a classified site in Rajasthan. Targeting data, partially intercepted, suggests PRSS-1 is the primary target. Secondary target is PAKSAT-1R. Launch window: 9-11 minutes. Impact probability at launch: 87%.",
+      "notes": "India's Prithvi Air Defence (PAD) system achieved a successful exo-atmospheric intercept at 80km altitude in 2006, and Mission Shakti (2019) demonstrated a kill at 300km. At PRSS-1's orbit of 500km, the PAD missile requires approximately 8 minutes of flight time. The 9-11 minute warning window is at the edge of viable response time.",
+      "geofence": {
+        "lat": 24.0,
+        "lng": 70.0,
+        "radius": 10.0
+      },
+      "options": [
+        {
+          "label": "Emergency Evasive Maneuver \u2014 Exhaust All Remaining Fuel",
+          "next": "pak_t6_p2",
+          "score": 50,
+          "risk": 15,
+          "requireFuel": 80,
+          "log": "PRSS-1 burns all fuel on evasive maneuver. Missile misses by 340m. Satellite survives but is now uncontrollable."
+        },
+        {
+          "label": "Pre-emptive ASAT Strike \u2014 Destroy Indian Launch Platform",
+          "next": "pak_t6_p2",
+          "score": 75,
+          "risk": 95,
+          "requireFuel": 20,
+          "trigger": "debris",
+          "log": "Pakistan ASAT kills Indian missile on launch pad. Conventional war triggered."
+        },
+        {
+          "label": "Deploy Decoy Satellites \u2014 Release 8 CubeSats",
+          "next": "pak_t6_p2",
+          "score": 50,
+          "risk": 10,
+          "requireFuel": 15,
+          "log": "PAD missile homes on largest decoy. PRSS-1 survives. Decoy constellation created."
+        },
+        {
+          "label": "Emergency Orbit Drop \u2014 Lower Altitude Below PAD Ceiling",
+          "next": "pak_t6_p2",
+          "score": 40,
+          "risk": 20,
+          "requireFuel": 25,
+          "log": "PRSS-1 drops to 280km. Below PAD optimal engagement envelope. Missile retargeted unsuccessfully."
+        }
+      ]
+    },
+    {
+      "id": "pak_t6_p2",
+      "title": "Track 6 \u2014 Post-ASAT: Managing the Aftermath",
+      "text": "PRSS-1 has survived \u2014 for now. But the Indian launch represents a clear first use of a satellite-intercept system against a Pakistani asset. The international community is in shock. China has privately warned India of 'serious consequences.' The US has called for immediate restraint. Pakistan's National Command Authority is in emergency session.",
+      "notes": "The 'first use' of an ASAT weapon against an operational satellite would be an unprecedented act in the history of space warfare. The 2007 Chinese ASAT test and India's 2019 Mission Shakti were both conducted against the launching nation's own satellites \u2014 not against an adversary. An actual hostile ASAT launch would violate no specific treaty (there is no Treaty banning ASAT use) but could be argued as an act of war under customary international law.",
+      "geofence": {
+        "lat": 24.0,
+        "lng": 70.0,
+        "radius": 10.0
+      },
+      "options": [
+        {
+          "label": "Declare Space Domain as Active Conflict Zone \u2014 Alert UNSC",
+          "next": "pak_t7_p1",
+          "score": 35,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Pakistan frames India as aggressor. Ceasefire resolution proposed."
+        },
+        {
+          "label": "Symmetric ASAT Response \u2014 Target Indian Military Satellite",
+          "next": "pak_t7_p1",
+          "score": 60,
+          "risk": 90,
+          "requireFuel": 25,
+          "trigger": "debris",
+          "log": "Pakistan destroys CARTOSAT-3. Debris at 500km. India and Pakistan in full space war."
+        },
+        {
+          "label": "Asymmetric Response \u2014 Cyberattack Indian MCF",
+          "next": "pak_t7_p1",
+          "score": 50,
+          "risk": 30,
+          "requireFuel": 0,
+          "log": "India's Master Control Facility hit. GEO fleet enters safe-hold. No debris created."
+        }
+      ]
+    },
+    {
+      "id": "pak_t7_p1",
+      "title": "Track 7 \u2014 On-Orbit Servicing: The Tanker Rendezvous",
+      "text": "A commercial on-orbit servicing vehicle (OrbitalFill-3, registered in Luxembourg but majority-owned by a Chinese state enterprise) is operating near PAKSAT-1R. It offers propellant resupply for Rs 12 billion. PRSS-1 has exhausted its emergency maneuver fuel. PAKSAT-1R's station-keeping budget is critically low. Both satellites face de-orbit within 4-6 months without resupply. Is OrbitalFill-3 a genuine commercial service or a Trojan horse?",
+      "notes": "On-orbit servicing is a rapidly growing commercial sector. Northrop Grumman's MEV-1 successfully docked with Intelsat-901 in 2020, extending its life by 5 years. The 'Trojan horse' concern is legitimate: a servicing vehicle that docks with a military satellite has physical access to that satellite's bus \u2014 it could install monitoring hardware, inject software malware via the fuel computer interface, or photograph the classified payload configuration at close range.",
+      "geofence": {
+        "lat": 0,
+        "lng": 40.0,
+        "radius": 10.0
+      },
+      "options": [
+        {
+          "label": "Accept Refueling \u2014 PRSS-1 First (+60 Fuel)",
+          "next": "pak_t7_p2",
+          "score": 50,
+          "risk": 35,
+          "requireFuel": 10,
+          "type": "refuel",
+          "log": "PRSS-1 receives 60 units of hydrazine. Service vehicle inspected but no hardware anomalies found."
+        },
+        {
+          "label": "Accept with Conditions \u2014 Pakistani Engineer Physically Present",
+          "next": "pak_t7_p2",
+          "score": 45,
+          "risk": 20,
+          "requireFuel": 10,
+          "type": "refuel",
+          "log": "Monitored docking. Refueling complete. Chinese technician's comms recorded for intelligence."
+        },
+        {
+          "label": "Decline \u2014 Emergency Fuel Conservation Protocol",
+          "next": "pak_t7_p2",
+          "score": 15,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Refueling declined. Strict fuel rationing extends satellite life by 90 days only."
+        },
+        {
+          "label": "Accept + Install Counter-Surveillance Firmware During Docking",
+          "next": "pak_t7_p2b",
+          "score": 55,
+          "risk": 30,
+          "requireFuel": 10,
+          "type": "refuel",
+          "log": "Refueling complete + Pakistani firmware installed in OrbitalFill-3's systems. Surveillance reversed."
+        }
+      ]
+    },
+    {
+      "id": "pak_t7_p2",
+      "title": "Track 7 \u2014 Post-Docking: Inspection Anomaly",
+      "text": "Post-docking inspection of PRSS-1 reveals a problem: the servicing vehicle's docking collar has left behind a small (3cm x 5cm) metallic attachment on PRSS-1's propellant fill port. It is emitting a very weak (0.5mW) RF signal on 433.92 MHz \u2014 the ISM band. SUPARCO's team believes it is a tracking beacon, potentially with a data exfiltration capability triggered by future proximity to another satellite.",
+      "notes": "The 433.92 MHz ISM band is license-free and used globally for everything from car key fobs to industrial sensors. A 0.5mW transmitter would be undetectable from Earth but would be strongly received by a co-orbital receiver satellite within 100km. The device could be a passive tracker (harmless), an active telemetry sniffer (records PRSS-1's internal signals for later collection), or a co-orbital homing beacon.",
+      "geofence": {
+        "lat": 0,
+        "lng": 42.0,
+        "radius": 8.0
+      },
+      "options": [
+        {
+          "label": "Broadcast 433 MHz Noise \u2014 Drown the Beacon",
+          "next": "pak_t8_p1",
+          "score": 30,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Beacon's signal overwhelmed. Intelligence value to OPFOR eliminated."
+        },
+        {
+          "label": "Use PRSS-1 Thermal Control to Burn Off the Device",
+          "next": "pak_t8_p1",
+          "score": 35,
+          "risk": 15,
+          "requireFuel": 5,
+          "log": "Radiator panel rotated to focus solar heating on attachment point. Device thermally destroyed after 2 orbits."
+        },
+        {
+          "label": "Leave Beacon \u2014 Feed False Telemetry to Mislead Collector",
+          "next": "pak_t8_p1",
+          "score": 40,
+          "risk": 10,
+          "requireFuel": 0,
+          "log": "Beacon allowed to transmit false operational data. OPFOR ISR misled."
+        }
+      ]
+    },
+    {
+      "id": "pak_t7_p2b",
+      "title": "Track 7 \u2014 Reversed Surveillance: Inside OrbitalFill-3",
+      "text": "The firmware installed during docking has given Pakistan real-time access to OrbitalFill-3's position, sensor data, and communications. OrbitalFill-3's next scheduled customer is GSAT-30 \u2014 India's primary military communications satellite over the Indian Ocean. Pakistan can now see exactly what OrbitalFill-3's inspectors see when they dock with Indian military satellites, including the classified payload architecture of GSAT-30.",
+      "notes": "Intelligence gained through a compromised third-party servicing vehicle represents a form of intelligence collection that violates no current treaty \u2014 there are no rules governing satellite servicing vehicle software security. Pakistan is exploiting a commercial vehicle to spy on a third nation's military satellite, using a Chinese-owned vehicle as an unwitting tool. The intelligence value is extraordinary: GSAT-30 payload architecture would be an enormous boon for targeting and jamming operations.",
+      "geofence": {
+        "lat": 0,
+        "lng": 40.0,
+        "radius": 10.0
+      },
+      "options": [
+        {
+          "label": "Collect Intelligence on GSAT-30 \u2014 Observe Docking Passively",
+          "next": "pak_t8_p1",
+          "score": 60,
+          "risk": 15,
+          "requireFuel": 0,
+          "log": "Full GSAT-30 payload architecture mapped. Pakistan can now precisely jam India's primary military comms."
+        },
+        {
+          "label": "Use Access to Inject Malware into GSAT-30 During OrbitalFill Docking",
+          "next": "pak_t8_p1",
+          "score": 75,
+          "risk": 50,
+          "requireFuel": 0,
+          "log": "GSAT-30 compromised during servicing. India's military comms contain Pakistan-controlled backdoor."
+        },
+        {
+          "label": "Terminate Access \u2014 Close the Firmware Before Discovered",
+          "next": "pak_t8_p1",
+          "score": 25,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "Pakistan closes access voluntarily. Intelligence windfall archived for future use."
+        }
+      ]
+    },
+    {
+      "id": "pak_t8_p1",
+      "title": "Track 8 \u2014 Quantum Encryption: Military Downlink Under Attack",
+      "text": "Pakistan Army's satellite communication downlink \u2014 routed through PAKSAT-1R \u2014 is under sustained quantum-computer-assisted brute force attack. Intercepts show India has rented quantum computing time from a commercial cloud provider to run Shor's algorithm against Pakistan's military encryption (RSA-2048). At current qubit fidelity rates, RSA-2048 will be broken in approximately 11 days.",
+      "notes": "RSA-2048 is currently considered secure against classical computers. However, Shor's algorithm on a fault-tolerant quantum computer with ~4,000 logical qubits could break RSA-2048 in hours. Current state-of-the-art quantum computers (2024) have error rates too high for this attack, but the technology is advancing rapidly. Renting commercial quantum computing time is already possible \u2014 IBM Quantum, Google Quantum AI, and IonQ all offer cloud access.",
+      "geofence": {
+        "lat": 0,
+        "lng": 90.0,
+        "radius": 20.0
+      },
+      "options": [
+        {
+          "label": "Emergency QKD Deployment \u2014 Quantum Key Distribution Uplink",
+          "next": "pak_t8_p2",
+          "score": 55,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "Quantum-safe encryption deployed. India's brute-force attack permanently defeated."
+        },
+        {
+          "label": "Frequency Hopping + Session Key Rotation Every 60 Seconds",
+          "next": "pak_t8_p2",
+          "score": 35,
+          "risk": 15,
+          "requireFuel": 0,
+          "log": "Rolling key rotation makes brute-force computationally inefficient. 90-day window bought."
+        },
+        {
+          "label": "Transition to One-Time Pad Encryption + Physical Key Courier",
+          "next": "pak_t8_p2",
+          "score": 30,
+          "risk": 10,
+          "requireFuel": 0,
+          "log": "OTP is quantum-proof. Logistically expensive but mathematically unbreakable."
+        },
+        {
+          "label": "Feed False Traffic \u2014 Burn India's Quantum Computing Credits on Decoys",
+          "next": "pak_t8_p2",
+          "score": 45,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "Pakistan floods channel with realistic decoy traffic. India burns 78% of quantum credits on false intercepts."
+        }
+      ]
+    },
+    {
+      "id": "pak_t8_p2",
+      "title": "Track 8 \u2014 SIGINT Windfall: The Broken Channel",
+      "text": "Despite the quantum attack, Pakistan's cyber team has broken India's own communications encryption first \u2014 through a much older vulnerability. A 2019 vintage encryption chip in ISRO's Bengaluru ground station uses a predictable pseudorandom number generator seeded by the system clock \u2014 a textbook implementation error. Pakistan can now decrypt all ISRO internal communications from 2019-2022 that were archived and read current communications in near-real-time.",
+      "notes": "Predictable random number generators (PRNGs) are among the most common and catastrophic cryptographic failures. The 'Dual_EC_DRBG' backdoor scandal (2013) revealed that the NSA had deliberately weakened a widely-used random number generator. Hardware-level PRNG vulnerabilities cannot be patched with software updates \u2014 the chip must be physically replaced. Pakistan reading ISRO archived communications from 2019-2022 would reveal classified satellite specifications, operational procedures, and potentially foreign intelligence relationships.",
+      "geofence": {
+        "lat": 13.0,
+        "lng": 77.5,
+        "radius": 3.0
+      },
+      "options": [
+        {
+          "label": "Exploit Historical Archive \u2014 Extract 3 Years of Classified ISRO Data",
+          "next": "pak_t9_p1",
+          "score": 65,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "3 years of ISRO archives exploited. Complete picture of Indian military space program obtained."
+        },
+        {
+          "label": "Exploit Real-Time Feed \u2014 Achieve Persistent ISRO Surveillance",
+          "next": "pak_t9_p1",
+          "score": 75,
+          "risk": 35,
+          "requireFuel": 0,
+          "log": "Pakistan has live view of all ISRO internal communications. Unprecedented strategic advantage."
+        },
+        {
+          "label": "Notify China + Jointly Exploit the Vulnerability",
+          "next": "pak_t9_p1",
+          "score": 55,
+          "risk": 25,
+          "requireFuel": 0,
+          "log": "China gains ISRO insight. Pakistan receives hypersonic ASAT technology in exchange."
+        }
+      ]
+    },
+    {
+      "id": "pak_t9_p1",
+      "title": "Track 9 \u2014 Asteroid Race: The Rare Earth Claim",
+      "text": "Spectroscopic surveys from PAKSAT-1R's secondary payload have confirmed: asteroid 2025 JX7 is approaching the cislunar system and contains an estimated 340,000 tonnes of platinum-group metals plus 2.8 million tonnes of nickel-iron. Pakistan, through its joint space program with China, has a cislunar prospector vehicle 31 hours away. India's prospector is 22 hours away. China's mining tug is 8 hours away and is clearly heading for the same asteroid.",
+      "notes": "Platinum-group metals (platinum, palladium, iridium, osmium) are essential for electronics, fuel cells, and catalytic converters. Earth's recoverable PGM reserves are estimated at 100,000 tonnes total \u2014 asteroid 2025 JX7 alone contains 3.4x Earth's current PGM reserves. The political complication: China, the nominal partner, appears to be racing independently for the same resource. The China-Pakistan Economic Corridor model \u2014 where China provides infrastructure but retains operational control \u2014 may be extending into space.",
+      "geofence": {
+        "lat": 0,
+        "lng": 0,
+        "radius": 500
+      },
+      "options": [
+        {
+          "label": "Coordinate with China \u2014 Joint Extraction Partnership",
+          "next": "pak_t9_p2",
+          "score": 45,
+          "risk": 10,
+          "requireFuel": 10,
+          "log": "Pakistan-China joint claim established. India arrives to find a done deal."
+        },
+        {
+          "label": "Sprint Burn \u2014 Arrive Before China and Claim Independence",
+          "next": "pak_t9_p2",
+          "score": 55,
+          "risk": 35,
+          "requireFuel": 65,
+          "log": "Pakistan prospector arrives first. Pakistan stakes independent claim. China surprised."
+        },
+        {
+          "label": "File Scientific Preserve Petition \u2014 Block All Extraction",
+          "next": "pak_t9_p2",
+          "score": 20,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "All parties blocked from extraction during UN review. Asteroid preserved."
+        },
+        {
+          "label": "Sabotage Indian Prospector Navigation \u2014 Misdirect by 72 Hours",
+          "next": "pak_t9_p2",
+          "score": 60,
+          "risk": 45,
+          "requireFuel": 5,
+          "log": "India's prospector navigation corrupted. Arrives 72 hours late. Asteroid already claimed."
+        }
+      ]
+    },
+    {
+      "id": "pak_t9_p2",
+      "title": "Track 9 \u2014 Asteroid: The Three-Way Standoff",
+      "text": "All three prospectors \u2014 Pakistan's, India's, and China's \u2014 are now anchored to different faces of 2025 JX7. The asteroid is a loose rubble pile \u2014 three simultaneous harpoon anchors have destabilized its rotation, and it is now tumbling at 2 rotations per hour. The only way to stabilize the asteroid requires all three parties to coordinate their thrust outputs simultaneously \u2014 forced cooperation or mutual destruction.",
+      "notes": "Rubble-pile asteroids (the majority of near-Earth asteroids in this size class) have no structural integrity \u2014 held together by gravity and weak inter-particle cohesion. The simultaneous anchor by three independent harpoon systems creates competing structural loads. A full uncontrolled tumble could eventually disintegrate the asteroid into a debris field, destroying all three vehicles. This forced cooperation scenario mirrors arms control negotiations: all parties lose unless they work together, but cooperation requires unprecedented trust.",
+      "geofence": {
+        "lat": 0,
+        "lng": 0,
+        "radius": 500
+      },
+      "options": [
+        {
+          "label": "Propose Three-Way Coordination \u2014 Joint Stabilization",
+          "next": "pak_t10_p1",
+          "score": 40,
+          "risk": 5,
+          "requireFuel": 20,
+          "log": "Historic three-way space cooperation agreed. Asteroid stabilized. Precedent-setting joint extraction begins."
+        },
+        {
+          "label": "Detach \u2014 Let India and China Deal With Each Other",
+          "next": "pak_t10_p1",
+          "score": 25,
+          "risk": 15,
+          "requireFuel": 15,
+          "log": "Pakistan detaches safely. India and China continue standoff. Asteroid eventually breaks up."
+        },
+        {
+          "label": "Increase Thrust \u2014 Win by Exhausting Others' Fuel First",
+          "next": "pak_t10_p1",
+          "score": 35,
+          "risk": 50,
+          "requireFuel": 60,
+          "log": "Pakistan increases thrust. Asteroid tumble accelerates. All three vehicles sustain solar panel damage."
+        }
+      ]
+    },
+    {
+      "id": "pak_t10_p1",
+      "title": "Track 10 \u2014 Space Law: The Lahore Convention",
+      "text": "The three-asteroid standoff has focused international attention on the critical absence of cislunar resource law. Pakistan's Foreign Ministry, working with the OIC and SCO, has drafted an emergency resolution: the 'Lahore Convention on Cislunar Resource Governance' \u2014 which would establish neutral zones around contested resources, create an arbitration mechanism, and require transparency reporting for all beyond-GEO operations.",
+      "notes": "The absence of binding cislunar governance law is the most significant legal gap in the current space framework. The 1967 OST, 1979 Moon Agreement (few signatories), and 2020 Artemis Accords provide partial guidance but leave major gaps. A Pakistani-led multilateral convention would be historically unprecedented. Success would dramatically elevate Pakistan's international status in the space domain.",
+      "geofence": {
+        "lat": 31.5,
+        "lng": 74.3,
+        "radius": 5.0
+      },
+      "options": [
+        {
+          "label": "Push for Full Convention \u2014 High Risk High Reward",
+          "next": "pak_t10_p2",
+          "score": 50,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "Pakistan leads historic space law initiative. 34 nations sign. India abstains. China signs conditionally."
+        },
+        {
+          "label": "Bilateral Framework with China First \u2014 Then Multilateralize",
+          "next": "pak_t10_p2",
+          "score": 40,
+          "risk": 10,
+          "requireFuel": 0,
+          "log": "China-Pakistan framework becomes template. 19 nations join. Credible start."
+        },
+        {
+          "label": "Table the Convention \u2014 Preserve Operational Flexibility",
+          "next": "pak_t10_p2",
+          "score": 20,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "No convention proposed. Pakistan preserves freedom of action but loses diplomatic initiative."
+        }
+      ]
+    },
+    {
+      "id": "pak_t10_p2",
+      "title": "Track 10 \u2014 Nuclear Powered Satellite: Project QAMAR",
+      "text": "Pakistan's National Command Authority has authorized a classified program: Project QAMAR \u2014 the development of a nuclear-powered military satellite using an RTG fueled by Pu-238. The satellite would carry a high-power directed-energy payload capable of disabling unshielded electronics within 500km. The scientists warn: Pu-238 production requires reprocessing facilities that Pakistan does not currently possess.",
+      "notes": "Pakistan's nuclear program is under NPT constraints and IAEA safeguards for declared facilities. Pu-238 (used in RTGs) is different from Pu-239 (used in weapons) \u2014 it produces heat but not a meaningful nuclear explosion. However, the reprocessing facilities needed to produce Pu-238 are identical to those used to produce Pu-239. IAEA inspectors would immediately flag new reprocessing capacity as a proliferation concern.",
+      "geofence": {
+        "lat": 33.7,
+        "lng": 73.0,
+        "radius": 5.0
+      },
+      "options": [
+        {
+          "label": "Proceed with QAMAR \u2014 Accept IAEA Friction",
+          "next": "pak_t11_p1",
+          "score": 55,
+          "risk": 40,
+          "requireFuel": 0,
+          "log": "QAMAR development begins. IAEA flags activity. US issues sanctions warning. Program proceeds."
+        },
+        {
+          "label": "Pursue Solar-Powered Equivalent \u2014 Lower Power, Lower Risk",
+          "next": "pak_t11_p1",
+          "score": 30,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Solar EW satellite designed. 10x lower power than QAMAR. Partial capability achieved."
+        },
+        {
+          "label": "Request RTG from China \u2014 No Domestic Production",
+          "next": "pak_t11_p1",
+          "score": 45,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "China supplies RTG as part of space cooperation. IAEA friction avoided. Dependency on China created."
+        }
+      ]
+    },
+    {
+      "id": "pak_t11_p1",
+      "title": "Track 11 \u2014 Space Force: Pakistan First Military Space Unit",
+      "text": "The Chief of Army Staff has proposed constituting Pakistan's first dedicated Space Force \u2014 a tri-service unit under Strategic Plans Division. The proposal requires Rs 180 billion in seed funding over 5 years, reallocation of Air Force satellite communication assets, and creation of a cadre of 2,400 specialized space warriors. The Air Force is opposed (losing asset control); the Navy is supportive (space-based maritime surveillance).",
+      "notes": "The US Space Force (est. 2019) is the world's first dedicated space military service. China's Strategic Support Force (2015) integrated space, cyber, and EW into a single command. India established its Defence Space Agency in 2019. Pakistan currently has no unified military space command \u2014 SUPARCO is civilian, Air Defence Command handles some satellite communication, and ISI has separate space intelligence functions. The fragmentation creates coordination failures during crises.",
+      "geofence": {
+        "lat": 33.7,
+        "lng": 73.1,
+        "radius": 3.0
+      },
+      "options": [
+        {
+          "label": "Establish Full Space Force \u2014 All Assets Consolidated",
+          "next": "pak_t11_p2",
+          "score": 40,
+          "risk": 15,
+          "requireFuel": 0,
+          "log": "Pakistan Space Force established. Command and Control unified. 5-year transition begins."
+        },
+        {
+          "label": "Establish Hybrid Agency \u2014 SUPARCO Military Division",
+          "next": "pak_t11_p2",
+          "score": 30,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Hybrid model adopted. Civilian-military coordination improved. Less disruptive to Air Force."
+        },
+        {
+          "label": "Reject \u2014 Maintain Current Structure + Improve Coordination Protocols",
+          "next": "pak_t11_p2",
+          "score": 15,
+          "risk": 10,
+          "requireFuel": 0,
+          "log": "Status quo maintained. Coordination failures persist. Cheaper but strategically weak."
+        }
+      ]
+    },
+    {
+      "id": "pak_t11_p2",
+      "title": "Track 11 \u2014 Coalition Building: OIC Space Alliance",
+      "text": "Pakistan has proposed an Organisation of Islamic Cooperation Space Alliance \u2014 a 57-member collective space security framework. Anchor commitments sought: Turkey (space launch capability), UAE (space investment), Saudi Arabia (ground station network), Malaysia (technical workforce). The framework would pool resources for a shared SSA network, joint satellite procurement, and mutual defense agreements. India's response: immediate diplomatic protest, calling it a 'space militarization bloc.'",
+      "notes": "OIC space cooperation is nascent but growing. UAE's Mohammed bin Rashid Space Centre has become a regional anchor \u2014 Emirates Mars Mission (2021) demonstrated world-class capability. Turkey's ROKETSAN develops rocket motors. Saudi Arabia's space program has $2.1B allocated for 2030 goals. A coordinated OIC space framework would create a third pole in the space domain alongside the US-led Artemis coalition and China-Russia framework.",
+      "geofence": {
+        "lat": 21.4,
+        "lng": 39.8,
+        "radius": 15.0
+      },
+      "options": [
+        {
+          "label": "Push Full Alliance \u2014 Formal Treaty With Article 5 Equivalent",
+          "next": "pak_t12_p1",
+          "score": 50,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "OIC Space Alliance founded with 23 charter members. Pakistan as founding chair."
+        },
+        {
+          "label": "Modest Start \u2014 Technical Cooperation Agreement Only",
+          "next": "pak_t12_p1",
+          "score": 30,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Technical cooperation agreed. Shared SSA data among 12 nations. Foundation laid."
+        },
+        {
+          "label": "Bilateral Focus \u2014 Turkey + UAE Priority Partners",
+          "next": "pak_t12_p1",
+          "score": 35,
+          "risk": 3,
+          "requireFuel": 0,
+          "log": "Pak-Turkey-UAE space triangle established. More manageable but less ambitious."
+        }
+      ]
+    },
+    {
+      "id": "pak_t12_p1",
+      "title": "Track 12 \u2014 Deep Space Probe: The Farida Mission",
+      "text": "SUPARCO's first deep space mission \u2014 the Farida probe to the asteroid belt \u2014 has achieved its cruise phase. However, SUPARCO's network lacks a deep space ground station with sufficient aperture to communicate with Farida beyond 1.5 AU. India has offered DSN relay support with full access to Farida's scientific data. China has offered relay support with no data-sharing requirement but demands Pakistan carry a classified Chinese payload on its next mission.",
+      "notes": "Deep space communication requires very large antennas \u2014 the US DSN uses 70-meter dishes. At 1.5 AU, even a 35-meter dish struggles to maintain 1kbps data rates. Pakistan has no antenna larger than 12 meters in its network. The choice between Indian relay (data sharing + constraints) and Chinese relay (payload requirement) illustrates Pakistan's consistent geopolitical dilemma: India is the closer neighbor with shared interests but historical enmity; China is the all-weather friend with extractive partnership terms.",
+      "geofence": {
+        "lat": 0,
+        "lng": 0,
+        "radius": 2000
+      },
+      "options": [
+        {
+          "label": "Accept Indian Offer \u2014 Normalize Space Cooperation",
+          "next": "pak_t12_p2",
+          "score": 35,
+          "risk": 10,
+          "requireFuel": 0,
+          "log": "Historic India-Pakistan space cooperation agreement signed. Scientific data shared. Political earthquake."
+        },
+        {
+          "label": "Accept Chinese Offer \u2014 Preserve Independence, Accept Payload",
+          "next": "pak_t12_p2",
+          "score": 40,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "Chinese relay used. Farida carries classified Chinese sensor. Data remains sovereign."
+        },
+        {
+          "label": "Build Own 35m Dish \u2014 Emergency National Capability",
+          "next": "pak_t12_p2",
+          "score": 25,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Emergency construction begins. Rs 8B cost. Online in 18 months. Farida in partial comms blackout meanwhile."
+        },
+        {
+          "label": "Accept ESA Relay \u2014 European Partnership",
+          "next": "pak_t12_p2",
+          "score": 30,
+          "risk": 3,
+          "requireFuel": 0,
+          "log": "ESA provides relay under ESAC protocols. Scientific partnership with Europe begins."
+        }
+      ]
+    },
+    {
+      "id": "pak_t12_p2",
+      "title": "Track 12 \u2014 Farida's Discovery: The Unexpected Signal",
+      "text": "The Farida probe, now at 2.1 AU in the main asteroid belt, has detected something extraordinary: a regular, structured radio signal at 1420 MHz (the hydrogen line \u2014 the universal frequency of first contact) originating from asteroid 624 Hektor, a Jovian Trojan asteroid. The signal has a mathematical structure consistent with prime number sequences. Farida has 9 hours of battery power before it must enter hibernation.",
+      "notes": "The hydrogen line (1420.405 MHz) is the frequency at which hydrogen atoms naturally emit radio waves \u2014 it is the same across the universe and is considered the most likely frequency for intentional interstellar communication. The search for extraterrestrial intelligence (SETI) has monitored this frequency for decades. A mathematically structured signal from an asteroid body would be the most significant scientific discovery in human history. The source could also be: a malfunctioning probe from a previous mission, natural maser activity (rare but documented), or a deliberate deception by a nation-state.",
+      "geofence": {
+        "lat": 0,
+        "lng": 0,
+        "radius": 5000
+      },
+      "options": [
+        {
+          "label": "Investigate Signal \u2014 Sacrifice Primary Mission Fuel Budget",
+          "next": "pak_t13_p1",
+          "score": 50,
+          "risk": 25,
+          "requireFuel": 50,
+          "log": "Farida maneuvers toward signal source. Pakistan potentially makes history's greatest discovery."
+        },
+        {
+          "label": "Record Signal and Continue Primary Mission \u2014 Transmit to Earth for Analysis",
+          "next": "pak_t13_p1",
+          "score": 35,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Signal recorded and transmitted. Earth-based analysis begins. Global scientific excitement."
+        },
+        {
+          "label": "Classify Signal \u2014 Report Only to NCA and Closest Allies",
+          "next": "pak_t13_p1",
+          "score": 40,
+          "risk": 15,
+          "requireFuel": 0,
+          "log": "Pakistan holds the discovery secret. Strategic advantage of first contact preserved."
+        }
+      ]
+    },
+    {
+      "id": "pak_t13_p1",
+      "title": "Track 13 \u2014 The Signal: What It Actually Is",
+      "text": "Analysis of the 1420 MHz signal from Hektor reveals its true nature: it is not extraterrestrial intelligence. It is a data transmission from a classified Chinese deep space probe ('Longyue-2') that crash-landed on Hektor in 2024 \u2014 a mission China never publicly announced. The probe's emergency beacon is transmitting a structured distress signal. Pakistan now has the only functional probe within range. China is 'urgently requesting' Pakistan NOT relay the data to any other party.",
+      "notes": "The discovery of a secret Chinese deep space probe is diplomatically explosive. China's space budget transparency is notoriously poor \u2014 several orbital missions have been conducted without ITU notification. A crashed probe on a Trojan asteroid would represent: (1) a significant undisclosed Chinese deep space capability; (2) potential violation of COSPAR planetary protection protocols; (3) a reconnaissance mission China did not want observed. Pakistan's possession of Longyue-2's crash data gives it leverage over China.",
+      "geofence": {
+        "lat": 0,
+        "lng": 0,
+        "radius": 5000
+      },
+      "options": [
+        {
+          "label": "Honor Chinese Request \u2014 Delete Signal Data",
+          "next": "pak_t14_p1",
+          "score": 20,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "Data deleted. China grateful. Pakistan's leverage surrendered. Relationship preserved."
+        },
+        {
+          "label": "Keep Data Secretly \u2014 Leverage Over China",
+          "next": "pak_t14_p1",
+          "score": 50,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "Pakistan holds classified leverage over China. Future concessions can be extracted quietly."
+        },
+        {
+          "label": "Disclose to Global Scientific Community \u2014 Expose Secret Mission",
+          "next": "pak_t14_p1",
+          "score": 35,
+          "risk": 35,
+          "requireFuel": 0,
+          "log": "China-Pakistan relationship severely damaged. Global scientific community gains data. Pakistan independence signal sent."
+        }
+      ]
+    },
+    {
+      "id": "pak_t14_p1",
+      "title": "Track 14 \u2014 Space Debris: The Kessler Ultimatum",
+      "text": "A catastrophic conjunction event is 72 hours away: an uncontrolled Chinese rocket body (CZ-5B third stage) is on a collision trajectory with India's CARTOSAT-3 at 509km altitude. If they collide, the resulting debris field will threaten PRSS-1 and three Chinese commercial satellites within 8 orbital periods. China, India, and Pakistan all have incentives to prevent the collision \u2014 but India has not responded to IADC collision warnings in 48 hours.",
+      "notes": "The Inter-Agency Space Debris Coordination Committee (IADC) issues conjunction warnings when collision probability exceeds 1 in 1,000. A CZ-5B third stage at 509km would create approximately 2,000 trackable fragments on impact. The debris band at 509km would intersect most LEO operational constellations. This is the ultimate 'hostage to the commons' problem: everyone shares the orbital environment, so everyone is affected by anyone's debris.",
+      "geofence": {
+        "lat": 0,
+        "lng": 0,
+        "radius": 500
+      },
+      "options": [
+        {
+          "label": "Offer Pakistan's Proximity Vehicle to Nudge CZ-5B Stage",
+          "next": "pak_t14_p2",
+          "score": 45,
+          "risk": 20,
+          "requireFuel": 30,
+          "log": "Pakistan performs emergency debris avoidance. International hero. India's crisis averted by rival."
+        },
+        {
+          "label": "Alert India Privately \u2014 Provide Collision Data",
+          "next": "pak_t14_p2",
+          "score": 30,
+          "risk": 2,
+          "requireFuel": 0,
+          "log": "India receives data and maneuvers CARTOSAT-3. Pakistan acknowledged in India's official statement."
+        },
+        {
+          "label": "Use Crisis as Leverage \u2014 Demand Indian Space Concessions in Exchange for Data",
+          "next": "pak_t14_p2",
+          "score": 40,
+          "risk": 25,
+          "requireFuel": 0,
+          "log": "India reluctantly agrees: no ASAT exercises for 2 years. Data shared. Collision averted via India maneuver."
+        }
+      ]
+    },
+    {
+      "id": "pak_t14_p2",
+      "title": "Track 14 \u2014 Debris Stewardship: The New Paradigm",
+      "text": "Pakistan's role in averting the CZ-5B / CARTOSAT-3 conjunction has earned unprecedented international goodwill. The UN Secretary-General has personally called Pakistan's Prime Minister. The US has offered to include Pakistan in the Combined Space Operations Center data-sharing network. India has privately communicated willingness to discuss confidence-building measures in the space domain.",
+      "notes": "Responsible space behavior \u2014 debris avoidance, transparency, multilateral cooperation \u2014 is increasingly recognized as a form of 'space soft power.' Nations that act as responsible space stewards gain credibility and access to international networks that provide military and commercial advantages. The CSpOC (Combined Space Operations Center) at Vandenberg Space Force Base provides real-time SSA data to partner nations. Access would give Pakistan awareness of all tracked space objects.",
+      "geofence": {
+        "lat": 0,
+        "lng": 0,
+        "radius": 500
+      },
+      "options": [
+        {
+          "label": "Accept US CSpOC Offer \u2014 Strengthen Western Alignment",
+          "next": "pak_t15_p1",
+          "score": 40,
+          "risk": 15,
+          "requireFuel": 0,
+          "log": "Pakistan joins CSpOC. US-Pakistan space relationship normalized. China expresses concerns."
+        },
+        {
+          "label": "Accept Indian CBM Offer \u2014 Regional De-escalation Priority",
+          "next": "pak_t15_p1",
+          "score": 35,
+          "risk": 5,
+          "requireFuel": 0,
+          "log": "India-Pakistan space CBM framework signed. Historic. Nuclear-adjacent risk reduced."
+        },
+        {
+          "label": "Leverage Both Offers \u2014 Strategic Ambiguity Maintained",
+          "next": "pak_t15_p1",
+          "score": 45,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "Pakistan engages both partners without committing. Maximum freedom of action preserved."
+        }
+      ]
+    },
+    {
+      "id": "pak_t15_p1",
+      "title": "Track 15 \u2014 Final Reckoning: The Ceasefire",
+      "text": "After weeks of orbital brinkmanship, the global community has reached a breaking point. The UN Secretary-General has called an emergency special session of the General Assembly \u2014 the first ever focused exclusively on space conflict. Pakistan's representative faces a historic choice: sign the 'Lahore-Geneva Accord' (a comprehensive space ceasefire and governance framework) or continue operations that risk permanent damage to the orbital environment that Pakistan itself depends on.",
+      "notes": "The conclusion of the simulation mirrors the fundamental dilemma of nuclear deterrence: space assets are simultaneously instruments of national power and shared infrastructure of global civilization. GPS navigation, weather satellites, and communication satellites serve all 8 billion humans regardless of nationality. A nation that 'wins' a space war by destroying adversary satellites also destroys its own ability to participate in the space-based global economy. This is the 'mutually assured dependence' that should underpin all space security policy.",
+      "geofence": {
+        "lat": 31.5,
+        "lng": 74.3,
+        "radius": 25.0
+      },
+      "options": [
+        {
+          "label": "Agree and Stand Down \u2014 Orbital Peace Achieved",
+          "next": "end",
+          "score": 100,
+          "risk": 0,
+          "requireFuel": 0,
+          "log": "Pakistan co-signs the Accord. Orbital ceasefire holds. New space governance era begins. Pakistan as architect of peace."
+        },
+        {
+          "label": "Propose Amendments \u2014 Negotiate From Strength",
+          "next": "end",
+          "score": 75,
+          "risk": 10,
+          "requireFuel": 0,
+          "log": "Pakistan secures key amendments protecting sovereign space operations. Accord signed on better terms."
+        },
+        {
+          "label": "Abstain \u2014 Preserve Strategic Flexibility",
+          "next": "end",
+          "score": 40,
+          "risk": 20,
+          "requireFuel": 0,
+          "log": "Pakistan abstains. Accord passes without Pakistan. Diplomatic isolation begins."
+        },
+        {
+          "label": "Final Strike \u2014 Last Kinetic Action Before Accord",
+          "next": "end",
+          "score": 25,
+          "risk": 99,
+          "requireFuel": 20,
+          "trigger": "debris",
+          "log": "Pakistan fires final ASAT. Orbit damaged for a generation. International pariah status permanent."
+        }
+      ]
+    }
+  ]
+}

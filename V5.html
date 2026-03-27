@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IST ORBITAL MONITORING SYSTEM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        :root { 
+            --bg: #f8fafc; 
+            --panel: #ffffff; 
+            --ink: #0f172a; 
+            --ist-blue: #004a99; 
+            --red: #be123c; 
+            --gold: #854d0e; 
+            --border: #e2e8f0; 
+            --green: #15803d; 
+            --map-bg: #cbd5e1;
+        }
+        body, html { margin: 0; padding: 0; height: 100%; font-family: 'Barlow Condensed', sans-serif; background: var(--bg); color: var(--ink); overflow: hidden; }
+        
+        #ui-layout { display: grid; grid-template-columns: 320px 1fr 300px; grid-template-rows: 70px 1fr 280px; height: 100vh; gap: 12px; padding: 12px; box-sizing: border-box; }
+        
+        header { 
+            grid-column: 1 / 4; background: var(--panel); border: 1px solid var(--border); 
+            display: flex; align-items: center; padding: 0 25px; justify-content: space-between; 
+            border-bottom: 4px solid var(--ist-blue); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        .ist-logo { height: 50px; margin-right: 15px; }
+        .branding-flex { display: flex; align-items: center; }
+        
+        .panel { background: var(--panel); border: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden; border-radius: 8px; }
+        .panel-header { background: #f1f5f9; padding: 10px 15px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; border-bottom: 1px solid var(--border); color: var(--ist-blue); letter-spacing: 1px; }
+        
+        #map-container { grid-column: 2; grid-row: 2; position: relative; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+        #map { height: 100%; width: 100%; background: var(--map-bg); }
+        
+        .mil-symbol { display: flex; justify-content: center; align-items: center; }
+        .marker-friendly { width: 16px; height: 16px; background: var(--ist-blue); border: 2px solid white; border-radius: 50%; box-shadow: 0 0 10px rgba(0, 74, 153, 0.4); }
+        .marker-hostile { width: 14px; height: 14px; background: var(--red); border: 2px solid white; transform: rotate(45deg); box-shadow: 0 0 10px rgba(190, 18, 60, 0.4); }
+        
+        .meter-bg { height: 10px; background: #f1f5f9; border-radius: 5px; overflow: hidden; margin-top: 6px; border: 1px solid var(--border); }
+        .meter-fill { height: 100%; transition: width 0.4s ease; }
+        
+        #asset-menu { grid-column: 1; grid-row: 2; }
+        #intel-panel { grid-column: 3; grid-row: 2; }
+        #decision-panel { grid-column: 2; grid-row: 3; padding: 25px; background: var(--panel); border-top: 4px solid var(--gold); border-radius: 8px; overflow-y: auto;}
+        
+        .asset-card { padding: 14px; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.2s; position: relative; }
+        .asset-card:hover { background: #f8fafc; }
+        .asset-card.selected { background: #eff6ff; border-left: 5px solid var(--ist-blue); }
+
+        @keyframes flash-red { 0% { background: #fff; } 50% { background: #fee2e2; } 100% { background: #fff; } }
+        .fuel-critical { animation: flash-red 1s infinite; }
+        
+        .primary-btn { 
+            padding: 14px 22px; background: var(--ist-blue); color: #fff; border: none; 
+            cursor: pointer; font-family: 'Share Tech Mono'; font-weight: bold; 
+            margin: 6px; text-transform: uppercase; width: calc(100% - 12px); 
+            border-radius: 6px; transition: all 0.2s;
+        }
+        .primary-btn:hover:not(:disabled) { background: #003d80; transform: translateY(-1px); }
+        .primary-btn:disabled { background: #cbd5e1; cursor: not-allowed; opacity: 0.7; }
+        
+        .grade-box { text-align: center; padding: 40px; border: 4px solid var(--ist-blue); background: #f0f7ff; border-radius: 12px; }
+        .briefing-box { margin-top: 15px; padding: 12px; background: #fffbeb; border-left: 4px solid var(--gold); font-size: 0.9rem; color: #92400e; }
+    </style>
+</head>
+<body>
+
+<div id="ui-layout">
+    <header>
+        <div class="branding-flex">
+            <img src="https://apiweb.ist.edu.pk/media/original_images/logo.png" class="ist-logo" alt="IST Logo">
+            <div>
+                <div style="font-weight:700; font-size: 1.3rem; color: var(--ist-blue); line-height:1;">INSTITUTE OF SPACE TECHNOLOGY</div>
+                <div style="font-size: 0.85rem; letter-spacing: 2px; color: #64748b; font-weight: bold;">SPACE WAR GAMING SYSTEM v16.8</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 25px;">
+            <span style="font-size:0.75rem; font-weight:700; color: #475569;">TEMPORAL WARP:</span>
+            <input type="range" id="speed-slider" min="1" max="1000" value="1" oninput="updateSpeed(this.value)">
+            <span id="speed-display" style="font-family: 'Share Tech Mono'; color: var(--gold); font-weight:bold; width: 50px; font-size: 1.1rem;">1x</span>
+        </div>
+        <div style="font-family:'Share Tech Mono'; font-size: 1.2rem; color: var(--ink); background: #f1f5f9; padding: 5px 15px; border-radius: 5px;">
+            SUC: <span id="ui-score" style="color:var(--green)">0</span> | 
+            RSK: <span id="ui-risk" style="color:var(--red)">0</span>
+        </div>
+    </header>
+
+    <div id="asset-menu" class="panel">
+        <div class="panel-header">Asset Registry (Propellant)</div>
+        <div id="asset-list" style="flex-grow:1;"></div>
+        <div style="padding:15px; border-top:1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <button onclick="startSim('INDIA')" style="background:#475569; color:white; font-weight:bold; cursor:pointer; height:40px; border:none; border-radius:6px;">INDIA HQ</button>
+            <button onclick="startSim('PAKISTAN')" style="background:var(--green); color:white; font-weight:bold; cursor:pointer; height:40px; border:none; border-radius:6px;">PAK HQ</button>
+        </div>
+    </div>
+
+    <div id="map-container"><div id="map"></div></div>
+
+    <div id="intel-panel" class="panel">
+        <div class="panel-header">Telemetry Commands</div>
+        <div id="unit-actions" style="padding:15px; display: grid; gap: 8px;"></div>
+        <div id="intel-content" style="padding:15px; font-size:0.9rem; border-top: 1px solid var(--border); color: #475569; line-height:1.5;">Awaiting satellite handshake...</div>
+    </div>
+
+    <div id="decision-panel" class="panel">
+        <div id="inject-content"><h3>MISSION CONTROL READY</h3><p>Initialize a theater via the Asset Registry to begin spatial coordination.</p></div>
+        <div id="inject-btns" style="display: flex; gap: 10px;"></div>
+    </div>
+</div>
+
+<script>
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+let staticGain, noiseSource;
+
+function initAudio() {
+    if (staticGain) return;
+    const bufSize = audioCtx.sampleRate * 2, buf = audioCtx.createBuffer(1, bufSize, audioCtx.sampleRate), out = buf.getChannelData(0);
+    for (let i = 0; i < bufSize; i++) out[i] = Math.random() * 2 - 1;
+    noiseSource = audioCtx.createBufferSource(); noiseSource.buffer = buf; noiseSource.loop = true;
+    staticGain = audioCtx.createGain(); staticGain.gain.value = 0;
+    noiseSource.connect(staticGain); staticGain.connect(audioCtx.destination); noiseSource.start();
+}
+
+function playPing(f=440, d=0.2) {
+    const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+    o.frequency.setValueAtTime(f, audioCtx.currentTime);
+    g.gain.setValueAtTime(0.04, audioCtx.currentTime); g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + d);
+    o.connect(g); g.connect(audioCtx.destination); o.start(); o.stop(audioCtx.currentTime + d);
+}
+
+let activeScenarios = [];
+let selectedId = null;
+let state = {
+    side: '', score: 0, risk: 0, paused: true, timeScale: 1,
+    assets: [
+        { id: 'S1', name: 'GSAT-7A', fuel: 100, lat: 12, lng: 77, vLat: 0.01, vLng: 0.02, side: 'INDIA' },
+        { id: 'S2', name: 'RISAT-2B', fuel: 90, lat: 28, lng: 70, vLat: 0.05, vLng: 0.07, side: 'INDIA' },
+        { id: 'S3', name: 'PAKSAT-1R', fuel: 100, lat: 24, lng: 67, vLat: -0.02, vLng: 0.03, side: 'PAKISTAN' }
+    ],
+    markers: {}
+};
+
+const map = L.map('map', { center: [22, 70], zoom: 4, zoomControl: false });
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png').addTo(map);
+
+function updateSpeed(v) { state.timeScale = parseInt(v); document.getElementById('speed-display').innerText = v + "x"; }
+
+async function startSim(side) {
+    initAudio(); if (audioCtx.state === 'suspended') audioCtx.resume();
+    const res = await fetch('scenarios.json'); 
+    const data = await res.json();
+    activeScenarios = data[side].map((s, i) => { 
+        if(!s.geofence) s.geofence = {lat: 15 + (i*8), lng: 65 + (i*10)}; 
+        return s; 
+    });
+    state.side = side; state.paused = false; state.score = 0; state.risk = 0;
+    Object.values(state.markers).forEach(m => map.removeLayer(m));
+    state.markers = {};
+    state.assets.forEach(a => {
+        const iconHtml = `<div class="${a.side === side ? 'marker-friendly' : 'marker-hostile'}"></div>`;
+        state.markers[a.id] = L.marker([a.lat, a.lng], { 
+            icon: L.divIcon({ className: 'mil-symbol', html: iconHtml, iconSize: [20, 20] }) 
+        }).addTo(map).on('click', () => selectAsset(a.id));
+    });
+    updateAssetList(); updateUI();
+}
+
+function selectAsset(id) {
+    selectedId = id; 
+    const a = state.assets.find(x => x.id === id); 
+    const isMe = (a.side === state.side);
+    const hasFuel = a.fuel > 0;
+
+    updateAssetList();
+    
+    document.getElementById('unit-actions').innerHTML = `
+        <button class="primary-btn" ${!isMe || a.fuel < 10 ? 'disabled' : ''} onclick="doCmd('maneuver')">ORBITAL MANEUVER (-10% FUEL)</button>
+        <button class="primary-btn" style="background:var(--green);" ${!isMe || a.fuel < 5 ? 'disabled' : ''} onclick="doCmd('scan')">MULTISPECTRAL SCAN (-5% FUEL)</button>
+    `;
+    
+    document.getElementById('intel-content').innerHTML = `
+        <strong>Asset:</strong> ${a.name}<br>
+        <strong>Propellant:</strong> ${Math.max(0, Math.floor(a.fuel))}%<br>
+        <strong>Status:</strong> ${hasFuel ? '<span style="color:var(--green)">ACTIVE</span>' : '<span style="color:var(--red)">OFFLINE - DEPLETED</span>'}
+    `;
+}
+
+function doCmd(type) {
+    const a = state.assets.find(x => x.id === selectedId);
+    if (type === 'maneuver' && a.fuel >= 10) {
+        a.fuel -= 10; a.lat += (Math.random() - 0.5) * 8; a.lng += (Math.random() - 0.5) * 8;
+        playPing(300, 0.3);
+    } else if (type === 'scan' && a.fuel >= 5) {
+        a.fuel -= 5; state.score += 15; playPing(800, 0.1);
+    }
+    updateAssetList(); 
+    selectAsset(a.id); 
+}
+
+function updatePhysics() {
+    if (state.paused || !state.side || activeScenarios.length === 0) return;
+    const goal = activeScenarios[0];
+    const playerSat = state.assets.find(f => f.side === state.side);
+    let minD = 999;
+
+    state.assets.forEach(a => {
+        let step = state.timeScale === 1000 ? 5 : state.timeScale * 0.05;
+        
+        if (state.timeScale === 1000 && a.side === state.side) {
+            a.lat = goal.geofence.lat; a.lng = goal.geofence.lng;
+        } else {
+            if (a.side !== state.side && state.risk > 300 && a.fuel > 0) {
+                let dLat = playerSat.lat - a.lat, dLng = playerSat.lng - a.lng;
+                let mag = Math.sqrt(dLat*dLat + dLng*dLng) || 1;
+                a.lat += (dLat / mag) * step * 0.8;
+                a.lng += (dLng / mag) * step * 0.8;
+                a.fuel -= (0.1 * step); 
+            } else {
+                a.lat += a.vLat * step; a.lng += a.vLng * step;
+            }
+
+            // --- EDITED: WRAP AND CLAMP BOUNDARY LOGIC ---
+            // Latitude: Bounce at poles with clamping to prevent sticking
+            if (a.lat > 85) { a.lat = 85; a.vLat *= -1; }
+            if (a.lat < -85) { a.lat = -85; a.vLat *= -1; }
+
+            // Longitude: Wrap around world (toroidal wrapping)
+            if (a.lng > 180) a.lng -= 360;
+            if (a.lng < -180) a.lng += 360;
+        }
+        
+        state.markers[a.id].setLatLng([a.lat, a.lng]);
+        if (a.side !== state.side) {
+            let d = Math.sqrt((playerSat.lat-a.lat)**2 + (playerSat.lng-a.lng)**2);
+            if (d < minD) minD = d;
+            if (d < 1.0) endGame("KINETIC IMPACT DETECTED: ASSET DESTROYED");
+        }
+    });
+
+    if (staticGain) {
+        let vol = minD < 15 ? Math.pow((15 - minD) / 15, 2) * 0.15 : 0;
+        staticGain.gain.setTargetAtTime(vol, audioCtx.currentTime, 0.1);
+    }
+
+    let dToGoal = Math.sqrt((playerSat.lat - goal.geofence.lat)**2 + (playerSat.lng - goal.geofence.lng)**2);
+    if (dToGoal < 3 || state.timeScale === 1000) {
+        state.paused = true; updateSpeed(1); document.getElementById('speed-slider').value = 1;
+        triggerScenario(goal);
+    }
+    
+    if (Math.random() > 0.95) updateAssetList();
+}
+
+function triggerScenario(s) {
+    playPing(900, 0.4);
+    const notesHtml = s.notes ? `<div class="briefing-box"><strong>INTEL NOTES:</strong> ${s.notes}</div>` : '';
+    document.getElementById('inject-content').innerHTML = `
+        <h3 style="color:var(--ist-blue); margin-top:0;">IST DATA UPLINK: ${s.title}</h3>
+        <p style="color:#475569; font-size:1.1rem; line-height:1.4;">${s.text}</p>
+        ${notesHtml}
+    `;
+    const btns = document.getElementById('inject-btns'); btns.innerHTML = '';
+    s.options.forEach(o => {
+        const b = document.createElement('button'); b.className = 'primary-btn'; b.innerText = o.label;
+        b.onclick = () => { 
+            // PENALTY: Apply requireFuel penalty if present
+            if (o.requireFuel && o.requireFuel > 0) {
+                const pSat = state.assets.find(f => f.side === state.side);
+                if (pSat) {
+                    pSat.fuel = Math.max(0, pSat.fuel - o.requireFuel);
+                    updateAssetList(); 
+                }
+            }
+            state.score += (o.score || 0); state.risk += (o.risk || 0); 
+            activeScenarios.shift(); resume(); 
+        };
+        btns.appendChild(b);
+    });
+}
+
+function resume() {
+    if (activeScenarios.length === 0) return finalize();
+    document.getElementById('inject-btns').innerHTML = '';
+    state.paused = false;
+    document.getElementById('inject-content').innerHTML = "<h3>CALCULATING INTERCEPT ORBIT...</h3>";
+    updateUI();
+}
+
+function finalize() {
+    state.paused = true;
+    let eff = state.score - (state.risk * 2), g = "F", c = "var(--red)";
+    if (eff >= 500) { g = "A+"; c = "var(--green)"; }
+    else if (eff >= 300) { g = "B"; c = "var(--ist-blue)"; }
+    document.getElementById('inject-content').innerHTML = `
+        <div class="grade-box" style="border-color:${c}">
+            <h1 style="font-size:5rem; color:${c}; margin:0;">${g}</h1>
+            <h2>ANALYSIS COMPLETE</h2>
+            <button class="primary-btn" onclick="location.reload()">RE-INITIALIZE</button>
+        </div>`;
+}
+
+function endGame(m) {
+    state.paused = true;
+    document.getElementById('inject-content').innerHTML = `<div class="grade-box" style="border-color:var(--red); background:#fef2f2"><h1 style="color:var(--red)">TELEMETRY LOST</h1><p>${m}</p><button class="primary-btn" style="background:var(--red)" onclick="location.reload()">RE-ESTABLISH LINK</button></div>`;
+}
+
+function updateAssetList() {
+    const list = document.getElementById('asset-list'); list.innerHTML = '';
+    state.assets.forEach(a => {
+        const fuelPct = Math.max(0, Math.floor(a.fuel));
+        const card = document.createElement('div');
+        card.className = `asset-card ${a.id === selectedId ? 'selected' : ''} ${fuelPct < 15 && fuelPct > 0 ? 'fuel-critical' : ''}`;
+        card.innerHTML = `
+            <div style="display:flex; justify-content:space-between"><strong>${a.name}</strong><small style="color:${a.side===state.side?'var(--ist-blue)':'var(--red)'}">${a.side}</small></div>
+            <div class="meter-bg"><div class="meter-fill" style="width:${fuelPct}%; background:${fuelPct < 25 ? 'var(--red)' : 'var(--ist-blue)'}"></div></div>
+            ${fuelPct <= 0 ? '<div style="font-size:0.65rem; color:var(--red); font-weight:bold; margin-top:2px;">LINK LOST: DEPLETED</div>' : ''}
+        `;
+        card.onclick = () => selectAsset(a.id); 
+        list.appendChild(card);
+    });
+}
+
+function updateUI() { document.getElementById('ui-score').innerText = state.score; document.getElementById('ui-risk').innerText = state.risk; }
+function animate() { updatePhysics(); requestAnimationFrame(animate); }
+animate();
+</script>
+</body>
+</html>
