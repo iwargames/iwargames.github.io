@@ -64,6 +64,13 @@
         .primary-btn:hover:not(:disabled) { background: #003d80; transform: translateY(-1px); }
         .primary-btn:disabled { background: #cbd5e1; cursor: not-allowed; opacity: 0.7; }
         
+        .skip-btn {
+            background: var(--gold); color: white; border: none; padding: 5px 10px;
+            border-radius: 4px; font-family: 'Share Tech Mono'; font-weight: bold;
+            cursor: pointer; font-size: 0.8rem; transition: background 0.2s;
+        }
+        .skip-btn:hover { background: #a15c11; }
+
         .grade-box { text-align: center; padding: 40px; border: 4px solid var(--ist-blue); background: #f0f7ff; border-radius: 12px; }
         .briefing-box { margin-top: 15px; padding: 12px; background: #fffbeb; border-left: 4px solid var(--gold); font-size: 0.9rem; color: #92400e; }
     </style>
@@ -79,10 +86,11 @@
                 <div style="font-size: 0.85rem; letter-spacing: 2px; color: #64748b; font-weight: bold;">SPACE WAR GAMING SYSTEM v16.8</div>
             </div>
         </div>
-        <div style="display: flex; align-items: center; gap: 25px;">
+        <div style="display: flex; align-items: center; gap: 15px;">
             <span style="font-size:0.75rem; font-weight:700; color: #475569;">TEMPORAL WARP:</span>
             <input type="range" id="speed-slider" min="1" max="1000" value="1" oninput="updateSpeed(this.value)">
-            <span id="speed-display" style="font-family: 'Share Tech Mono'; color: var(--gold); font-weight:bold; width: 50px; font-size: 1.1rem;">1x</span>
+            <span id="speed-display" style="font-family: 'Share Tech Mono'; color: var(--gold); font-weight:bold; width: 45px; font-size: 1.1rem;">1x</span>
+            <button class="skip-btn" onclick="skipToNext()">NEXT SCENE</button>
         </div>
         <div style="font-family:'Share Tech Mono'; font-size: 1.2rem; color: var(--ink); background: #f1f5f9; padding: 5px 15px; border-radius: 5px;">
             SUC: <span id="ui-score" style="color:var(--green)">0</span> | 
@@ -149,6 +157,23 @@ const map = L.map('map', { center: [22, 70], zoom: 4, zoomControl: false });
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png').addTo(map);
 
 function updateSpeed(v) { state.timeScale = parseInt(v); document.getElementById('speed-display').innerText = v + "x"; }
+
+// Function to skip immediately to next scenario
+function skipToNext() {
+    if (state.paused || !state.side || activeScenarios.length === 0) return;
+    const goal = activeScenarios[0];
+    const playerSat = state.assets.find(f => f.side === state.side);
+    
+    // Teleport player to goal
+    playerSat.lat = goal.geofence.lat;
+    playerSat.lng = goal.geofence.lng;
+    
+    // Force scenario trigger
+    state.paused = true;
+    updateSpeed(1);
+    document.getElementById('speed-slider').value = 1;
+    triggerScenario(goal);
+}
 
 async function startSim(side) {
     initAudio(); if (audioCtx.state === 'suspended') audioCtx.resume();
@@ -224,12 +249,8 @@ function updatePhysics() {
                 a.lat += a.vLat * step; a.lng += a.vLng * step;
             }
 
-            // --- EDITED: WRAP AND CLAMP BOUNDARY LOGIC ---
-            // Latitude: Bounce at poles with clamping to prevent sticking
             if (a.lat > 85) { a.lat = 85; a.vLat *= -1; }
             if (a.lat < -85) { a.lat = -85; a.vLat *= -1; }
-
-            // Longitude: Wrap around world (toroidal wrapping)
             if (a.lng > 180) a.lng -= 360;
             if (a.lng < -180) a.lng += 360;
         }
@@ -248,7 +269,7 @@ function updatePhysics() {
     }
 
     let dToGoal = Math.sqrt((playerSat.lat - goal.geofence.lat)**2 + (playerSat.lng - goal.geofence.lng)**2);
-    if (dToGoal < 3 || state.timeScale === 1000) {
+    if (dToGoal < 3) {
         state.paused = true; updateSpeed(1); document.getElementById('speed-slider').value = 1;
         triggerScenario(goal);
     }
@@ -268,7 +289,6 @@ function triggerScenario(s) {
     s.options.forEach(o => {
         const b = document.createElement('button'); b.className = 'primary-btn'; b.innerText = o.label;
         b.onclick = () => { 
-            // PENALTY: Apply requireFuel penalty if present
             if (o.requireFuel && o.requireFuel > 0) {
                 const pSat = state.assets.find(f => f.side === state.side);
                 if (pSat) {
@@ -294,8 +314,12 @@ function resume() {
 function finalize() {
     state.paused = true;
     let eff = state.score - (state.risk * 2), g = "F", c = "var(--red)";
-    if (eff >= 500) { g = "A+"; c = "var(--green)"; }
+    
+	if (eff >= 500) { g = "A+"; c = "var(--green)"; }
+    else if (eff >= 400) { g = "A"; c = "var(--green)"; }
     else if (eff >= 300) { g = "B"; c = "var(--ist-blue)"; }
+    else if (eff >= 200) { g = "C"; c = "var(--gold)"; }
+
     document.getElementById('inject-content').innerHTML = `
         <div class="grade-box" style="border-color:${c}">
             <h1 style="font-size:5rem; color:${c}; margin:0;">${g}</h1>
